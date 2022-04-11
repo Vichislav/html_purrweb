@@ -1,3 +1,41 @@
+/* montserrat-regular - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('../fonts/montserrat-v23-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/montserrat-v23-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-700 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('../fonts/montserrat-v23-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/montserrat-v23-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* noto-sans-regular - latin */
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+    url('../fonts/noto-sans-v26-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/noto-sans-v26-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* noto-sans-700 - latin */
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+    url('../fonts/noto-sans-v26-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/noto-sans-v26-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html {
     box-sizing: border-box; /*для корректного расчета отступов и размера блока*/
 }
@@ -6,6 +44,7 @@ html {
 }
 
 body{
+    font-family: "Noto Sans";
     font-style: normal;
     font-size: 16px;
     line-height: 1.2;
@@ -69,17 +108,27 @@ body{
     flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
     background-color: burlywood;
 }
+.intro__wrapper-1 {
+    display: flex;
+    flex-direction: row;
+}
 .intro__textBlock {
     min-height: 700px;
-    background: url("../img/intro-ifon.png") no-repeat right;
+    /*background: url("../img/intro-ifon.png") no-repeat right;*/
 }
 .intro__textBlock-item-1 {
     padding-top: 154px;
+    min-width: 643px;
 }
 .intro__textBlock-item-1-text {
-   font-size: 64px;
-   line-height: 70px;
+    font-family: Montserrat;
+    font-size: 64px;
+    line-height: 70px;
     color: #FFFFFF;
+}
+
+.intro__imgBlock {
+    padding-left: 15px; /*подгонялось в figma 180*/
 }
 .intro__textBlock-item-2 {
     padding-top: 55px;
@@ -103,13 +152,28 @@ body{
     display: flex;
     flex-direction: row;
 }
+.intro__footer-item-1 {
+    min-width: 413px;
+}
 .intro__footer-item-1-text {
+    font-family: Montserrat;
     text-transform: uppercase;
     font-size: 35px;
     line-height: 70px;
     color: #FFFFFF;
 }
 .intro__footer-item-2 {
-    padding-left: 388px;
+   padding-left: 220px; /*подгонялось в figma 388*/
 }
+.intro__footer-item-2-ico:hover, .intro__footer-item-2-ico:focus, .intro__footer-item-2-ico:active{
+    opacity: 0.5;
+}
+
+.intro__footer-item-3 {
+    padding-left: 28px;
+}
+.intro__footer-item-3-ico:hover, .intro__footer-item-3-ico:focus, .intro__footer-item-3-ico:active{
+    opacity: 0.5;
+}
+
 /*INTRO STYLE END*/
