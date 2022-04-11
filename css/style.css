@@ -13,21 +13,22 @@ body{
     background-color: gray;
 }
 
+/*HEADER STYLE START*/
 .header__wrapper {
     max-width: 1060px;
-    margin: 45px auto; /*выставляет див с этим классом по центру в его родителе*/
+    margin: auto; /*выставляет див с этим классом по центру в его родителе*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
     background-color: darkolivegreen;
 }
-.header__cube {
+.header__cube { /*синий кубик*/
 }
 .header__cube-svg:hover, .header__cube-svg:focus, .header__cube-svg:active{
     opacity: 0.75;
 }
-.header__noTab {
+.header__noTab { /*div для надписи NoTab*/
     padding-left: 8px;
 }
 
@@ -54,3 +55,61 @@ body{
 .header__nav-item-link:hover, .header__nav-item-link:focus, .header__nav-item-link:active{
     opacity: 0.75;
 }
+/*HEADER STYLE END*/
+
+/*INTRO STYLE START*/
+
+
+.intro__wrapper { /*почти тоже самое, что и в классе header__wrapper надо будет объединить*/
+    max-width: 1060px;
+    margin: auto; /*выставляет див с этим классом по центру в его родителе*/
+    display: flex;
+    flex-direction: column; /*ОТЛИЧИЕ от  header__wrapper */
+    justify-content: flex-start;
+    flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
+    background-color: burlywood;
+}
+.intro__textBlock {
+    min-height: 700px;
+    background: url("../img/intro-ifon.png") no-repeat right;
+}
+.intro__textBlock-item-1 {
+    padding-top: 154px;
+}
+.intro__textBlock-item-1-text {
+   font-size: 64px;
+   line-height: 70px;
+    color: #FFFFFF;
+}
+.intro__textBlock-item-2 {
+    padding-top: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.intro__textBlock-item-2-img {
+    height: 125px;
+    width: 125px;
+    /*background: rgba(96, 92, 234, 0.5); если подключить градиет исчезнет прямая
+    filter: blur(100px);*/
+
+}
+.intro__textBlock-item-2-text {
+    font-size: 20px;
+    line-height: 27px;
+    color: #FFFFFF;
+}
+.intro__footer {
+    display: flex;
+    flex-direction: row;
+}
+.intro__footer-item-1-text {
+    text-transform: uppercase;
+    font-size: 35px;
+    line-height: 70px;
+    color: #FFFFFF;
+}
+.intro__footer-item-2 {
+    padding-left: 388px;
+}
+/*INTRO STYLE END*/
