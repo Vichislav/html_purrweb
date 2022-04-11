@@ -53,14 +53,24 @@ body{
 }
 
 /*HEADER STYLE START*/
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    /*height: 10784px;*/
+
+    background: #0c0c0c;
+}
 .header__wrapper {
-    max-width: 1060px;
+    width: 80%;
+    max-width: 1240px;
     margin: auto; /*выставляет див с этим классом по центру в его родителе*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
-    background-color: darkolivegreen;
+    background-color: black;
 }
 .header__cube { /*синий кубик*/
 }
@@ -100,13 +110,14 @@ body{
 
 
 .intro__wrapper { /*почти тоже самое, что и в классе header__wrapper надо будет объединить*/
-    max-width: 1060px;
+    width: 80%;
+    max-width: 1240px;
     margin: auto; /*выставляет див с этим классом по центру в его родителе*/
     display: flex;
     flex-direction: column; /*ОТЛИЧИЕ от  header__wrapper */
     justify-content: flex-start;
     flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
-    background-color: burlywood;
+    background-color: black;
 }
 .intro__wrapper-1 {
     display: flex;
@@ -118,22 +129,24 @@ body{
 }
 .intro__textBlock-item-1 {
     padding-top: 154px;
-    min-width: 643px;
+    /*min-width: 643px;*/
 }
 .intro__textBlock-item-1-text {
     font-family: Montserrat;
     font-size: 64px;
     line-height: 70px;
+    font-weight: 700;
     color: #FFFFFF;
 }
 
 .intro__imgBlock {
-    padding-left: 15px; /*подгонялось в figma 180*/
+    padding-left: 50px; /*погонядлось в figma 180*/
 }
 .intro__textBlock-item-2 {
     padding-top: 55px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-end;
 }
 .intro__textBlock-item-2-img {
@@ -151,6 +164,7 @@ body{
 .intro__footer {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .intro__footer-item-1 {
     min-width: 413px;
@@ -158,12 +172,13 @@ body{
 .intro__footer-item-1-text {
     font-family: Montserrat;
     text-transform: uppercase;
+    font-weight: 700;
     font-size: 35px;
     line-height: 70px;
     color: #FFFFFF;
 }
 .intro__footer-item-2 {
-   padding-left: 220px; /*подгонялось в figma 388*/
+   padding-left: 260px; /*подгонялось в figma 388*/
 }
 .intro__footer-item-2-ico:hover, .intro__footer-item-2-ico:focus, .intro__footer-item-2-ico:active{
     opacity: 0.5;
@@ -175,5 +190,90 @@ body{
 .intro__footer-item-3-ico:hover, .intro__footer-item-3-ico:focus, .intro__footer-item-3-ico:active{
     opacity: 0.5;
 }
-
 /*INTRO STYLE END*/
+
+/*COOKIE STYLE START*/
+
+.cookie {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 93px;
+    background: #212834;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cookie__item-1 {
+    padding-left: 100px;
+}
+.cookie__item-text {
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.cookie__item-2 {
+    padding-right: 24px;
+}
+
+.cookie__item-button {
+    text-transform: uppercase; /*все буквы заглавные*/
+    font-size: 14px;
+    line-height: 19px;
+    width: 132px;
+    height: 50px;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid #FFFFFF;
+    border-radius: 6px;
+}
+.cookie__item-button:hover, .cookie__item-button:focus, .cookie__item-button:active{
+    background: #a29b9b;
+}
+/*COOKIE STYLE END*/
+
+/*INFO__WINDOWS STYLE START*/
+.info__windows {
+    padding-top: 61px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    max-width: 1240px;
+    margin: auto; /*выставляет див с этим классом по центру в его родителе*/
+}
+.info__window-mail {
+    padding-left: 58px;
+    display: flex;
+    align-items: center;
+}
+.info__windows-login {
+    padding-left: 80px;
+}
+
+.info__window-wrap {
+    width: 503px;
+    height: 312px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    border-radius: 21.3671px;
+}
+
+.info__windows-text {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 41px;
+    color: #FFFFFF;
+}
+.info__windows-link {
+    font-size: 24px;
+    line-height: 33px;
+    color: #FFFFFF;
+}
+
+
+
+/*INFO__WINDOWS STYLE END*/
