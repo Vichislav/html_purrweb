@@ -1,0 +1,56 @@
+html {
+    box-sizing: border-box; /*для корректного расчета отступов и размера блока*/
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: normal;
+    background-color: gray;
+}
+
+.header__wrapper {
+    max-width: 1060px;
+    margin: 45px auto; /*выставляет див с этим классом по центру в его родителе*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
+    background-color: darkolivegreen;
+}
+.header__cube {
+}
+.header__cube-svg:hover, .header__cube-svg:focus, .header__cube-svg:active{
+    opacity: 0.75;
+}
+.header__noTab {
+    padding-left: 8px;
+}
+
+.header__noTab-text:hover, .header__noTab-text:focus, .header__noTab-text:active{
+    opacity: 0.75;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 108px;
+}
+.header__nav-item-text {
+    padding-left: 12px;
+}
+
+.header__nav-item-link {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid #FFFFFF;
+}
+.header__nav-item-link:hover, .header__nav-item-link:focus, .header__nav-item-link:active{
+    opacity: 0.75;
+}
