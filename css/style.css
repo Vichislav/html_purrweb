@@ -238,30 +238,47 @@ body{
 /*INFO__WINDOWS STYLE START*/
 .info__windows {
     padding-top: 61px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     width: 80%;
     max-width: 1240px;
     margin: auto; /*выставляет див с этим классом по центру в его родителе*/
+    background-color: darkolivegreen;
+    padding-left: 56px;   /*подгонялось в figma 76*/
+    padding-right: 55px;  /*подгонялось в figma 75*/
 }
-.info__window-mail {
-    padding-left: 58px;
+.info__windows-wrap {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rosybrown;
 }
-.info__windows-login {
-    padding-left: 80px;
-}
-
-.info__window-wrap {
+.info__window-wrap-border {
     width: 503px;
     height: 312px;
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
     border-radius: 21.3671px;
-}
+    background-color: #212834;
+    padding-left: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+}
+.info__window-mail {
+    height: 186px;
+    background-color: #b3d4fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info__windows-login {
+    height: 122px;
+    background-color: #b3d4fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .info__windows-text {
     font-weight: 700;
     font-size: 30px;
@@ -273,7 +290,5 @@ body{
     line-height: 33px;
     color: #FFFFFF;
 }
-
-
 
 /*INFO__WINDOWS STYLE END*/
