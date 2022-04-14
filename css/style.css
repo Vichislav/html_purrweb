@@ -241,7 +241,7 @@ body{
     width: 80%;
     max-width: 1240px;
     margin: auto; /*выставляет див с этим классом по центру в его родителе*/
-    background-color: darkolivegreen;
+
     padding-left: 56px;   /*подгонялось в figma 76*/
     padding-right: 55px;  /*подгонялось в figma 75*/
 }
@@ -250,7 +250,7 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: rosybrown;
+
 }
 .info__window-wrap-border {
     width: 503px;
@@ -258,7 +258,7 @@ body{
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-sizing: border-box;
     border-radius: 21.3671px;
-    background-color: #212834;
+
     padding-left: 55px;
     display: flex;
     flex-direction: column;
@@ -267,14 +267,14 @@ body{
 }
 .info__window-mail {
     height: 186px;
-    background-color: #b3d4fc;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 .info__windows-login {
     height: 122px;
-    background-color: #b3d4fc;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -292,3 +292,44 @@ body{
 }
 
 /*INFO__WINDOWS STYLE END*/
+
+/*MISSION STYLE START*/
+.mission {
+    width: 100%;
+    max-width: 1440px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.mission__img { /*контейнер картинки*/
+
+}
+.mission__img-ico { /*сама картинка*/
+    max-width: 918px;
+    min-height: 498px;
+}
+.mission__text { /*первый контейнер текста*/
+    max-width: 358px;
+
+}
+.mission__text-container { /*второй контейнер текста*/
+
+}
+.mission__text-title { /*заголовок*/
+    padding-top: 180px; /*подгонялос в было figma 236*/
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 51px;
+    line-height: 62px;
+    color: #FFFFFF;
+}
+.mission__text-content { /*основный текст*/
+    max-width: 315px;
+    padding-top: 23px;
+    font-size: 18px;
+    line-height: 24.5px;
+    color: #FFFFFF;
+}
+
+/*MISSION STYLE END*/
