@@ -347,5 +347,72 @@ body{
     line-height: 24.5px;
     color: #FFFFFF;
 }
-
 /*MISSION STYLE END*/
+
+/*IDScanner STYLE START*/
+
+.IDScanner { /*общий контейнер*/
+    position: relative;
+    z-index: 1;
+}
+.IDScanner__img { /*контенер картинки бармена*/
+    position: absolute;
+    z-index: 2;
+
+    width: 1440px; /*figma*/
+    height: 1060px;
+
+    background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+
+}
+.IDScanner__img-ico { /*картинка бармена*/
+
+    width: 1440px;
+    height: 836px;
+}
+.IDScanner__content { /*контенер для двух телефонов и текста*/
+    padding-top: 467px;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.IDScanner__content-img-1 { /*контенер 1 телефона*/
+    padding-left: 100px;
+}
+.IDScanner__content-img-1-ico { /*1 телефон (левый)*/
+
+}
+.IDScanner__content-img-2 { /*контенер 2 телефона*/
+    padding-left: 49.5px;
+}
+.IDScanner__content-img-2-ico { /*2 телефон (правый)*/
+
+}
+.IDScanner__content-text { /*контейнер для текстовых блоков*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-left: 128.44px;
+    padding-top: 387px; /*похоже надо будет подгонять*/
+}
+.IDScanner__content-text-tittle { /*титул*/
+
+    width: 400px;
+    height: 62px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 51px;
+    line-height: 62px;
+    color: #FFFFFF;
+}
+.IDScanner__content-text-paragraph { /*абзац*/
+    padding-top: 23px;
+    width: 316px;
+    height: 125px;
+    font-size: 18px;
+    line-height: 24.5px;
+    color: #FFFFFF;
+}
+/*IDScanner STYLE END*/
