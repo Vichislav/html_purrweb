@@ -159,20 +159,31 @@ body{
     transform: rotate(-105.26deg);
 }
 .intro__textBlock-item-2 {
+    position: relative;
+    z-index: 1;
     padding-top: 55px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-end;
 }
-.intro__textBlock-item-2-img {
+.intro__textBlock-item-2-gradient { /*контейнер для градиента*/
+    position: absolute;
+    z-index: 2;
     height: 125px;
     width: 125px;
-    /*background: rgba(96, 92, 234, 0.5); если подключить градиет исчезнет прямая
-    filter: blur(100px);*/
-
+    background: rgba(96, 92, 234, 0.5); /*еле видно это ...*/
+    filter: blur(100px);
+}
+.intro__textBlock-item-2-img { /*контейнер картинки-линии*/
+    position: relative;
+    z-index: 3;
+    height: 125px; /*чет не то*/
+    width: 125px;  /*чет я забыл*/
 }
 .intro__textBlock-item-2-text {
+    position: relative;
+    z-index: 3;
     font-size: 20px;
     line-height: 27px;
     color: #FFFFFF;
@@ -353,27 +364,34 @@ body{
 
 .IDScanner { /*общий контейнер*/
     position: relative;
-    z-index: 1;
+    z-index: 1; /*слой IDScanner*/
+    width: 1440px;
+    height: 1134px;
 }
-.IDScanner__img { /*контенер картинки бармена*/
+
+.IDScanner__img { /*контенер для гардиента и картинки бармена*/
     position: absolute;
-    z-index: 2;
-
-    width: 1440px; /*figma*/
-    height: 1060px;
-
-    background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+    z-index: 2;  /*слой IDScanner__img & IDScanner*/
 
 }
-.IDScanner__img-ico { /*картинка бармена*/
-
+.IDScanner__img-gradient {  /*контенер для градиента*/
+    position: absolute;
+    z-index: 4; /*слой IDScanner__img*/
     width: 1440px;
     height: 836px;
+    background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+}
+.IDScanner__img-ico { /*картинка бармена*/
+    position: relative;
+    z-index: 3; /*слой IDScanner__img*/
+    width: 1440px;
+    height: 836px;
+    opacity: 0.5;
 }
 .IDScanner__content { /*контенер для двух телефонов и текста*/
     padding-top: 467px;
     position: absolute;
-    z-index: 3;
+    z-index: 3; /*слой IDScanner (поверх всех по идее)*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -416,3 +434,84 @@ body{
     color: #FFFFFF;
 }
 /*IDScanner STYLE END*/
+
+/*TOOL STYLE START*/
+.tool { /*общий*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1440px;
+    height: 730px;
+}
+.tool__text { /*контейнер для текста*/
+    padding-top: 294px;
+    padding-left: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.tool__text-gradient { /*контейнер для градиента, которого не видно*/
+
+}
+.tool__text-tittle { /*текст загаловок*/
+    width: 497px;
+    height: 62px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 51px;
+    line-height: 62px;
+    color: #FFFFFF;
+}
+.tool__text-content { /*основной текст*/
+    padding-top: 23px;
+    width: 395px;
+    height: 119px;
+    font-size: 18px;
+    line-height: 24.5px;
+    color: #FFFFFF;
+}
+.tool__img { /*контенер контейнеров для графиков*/
+    position: relative;
+    z-index: 1;
+    width: 843px;
+    height: 730px;
+}
+.tool__img-chart-1 { /*контейнер для графика 1, ЧБ график*/
+    position: absolute;
+    padding-top: 205px;
+    padding-left: 337px;
+}
+.tool__img-chart-2 { /*контейнер для графика 2, круговые диаграммы 4 шт*/
+    position: absolute;
+    padding-top: 389px;
+    padding-left: 157px;
+}
+.tool__img-chart-3 { /*контейнер для графика 3, диаграмма с лампой*/
+    position: absolute;
+    padding-top: 387px;
+    padding-left: 467px;
+    z-index: 2;
+}
+.tool__img-chart-4 { /*контейнер для графика 4, график ломанный двойной*/
+    position: absolute;
+    padding-top: 455px;
+    padding-left: 25px;
+}
+.tool__img-chart-5 { /*контейнер для графика 5, график склаженный*/
+    position: absolute;
+    padding-top: 498px;
+    padding-left: 280px;
+    z-index: 3;
+}
+.tool__img-chart-6 { /*контейнер для графика 6, гистаграммы столбцы*/
+    position: absolute;
+    padding-top: 598px;
+    padding-left: 207px;
+    z-index: 2;
+}
+.tool__img-chart-7 { /*контейнер для графика 6, диаграммы круговые с процентами*/
+    position: absolute;
+    padding-top: 670px;
+    padding-left: 447px;
+}
+/*TOOL STYLE END*/
