@@ -443,14 +443,25 @@ body{
     width: 1440px;
     height: 730px;
 }
+.tool__gradient { /*контейнер для контейнера с градиентом*/
+    position: absolute;
+    padding-top: 103px;
+    padding-right: 111px; /*нужно гуглить как сдвинуть его за пределы контейнера*/
+}
+.tool__gradient-item { /*контейнер с градиентом*/
+    width: 426px;
+    height: 438px;
+    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+    opacity: 0.1;
+    filter: blur(250px);
+    transform: rotate(5.78deg);
+}
 .tool__text { /*контейнер для текста*/
-    padding-top: 294px;
-    padding-left: 100px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-}
-.tool__text-gradient { /*контейнер для градиента, которого не видно*/
+    padding-top: 294px;
+    padding-left: 100px;
 
 }
 .tool__text-tittle { /*текст загаловок*/
@@ -461,6 +472,7 @@ body{
     font-size: 51px;
     line-height: 62px;
     color: #FFFFFF;
+
 }
 .tool__text-content { /*основной текст*/
     padding-top: 23px;
@@ -469,6 +481,7 @@ body{
     font-size: 18px;
     line-height: 24.5px;
     color: #FFFFFF;
+
 }
 .tool__img { /*контенер контейнеров для графиков*/
     position: relative;
