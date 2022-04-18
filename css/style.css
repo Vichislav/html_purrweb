@@ -584,7 +584,11 @@ body{
     color: #FFFFFF;
 }
 .qrcode__left-content-text-button { /*контейнер для кнопок*/
-    padding-top: 58px;
+    position: absolute;
+    z-index: 11;
+
+    padding-top: 785px;
+    padding-left: 182px;
     display: flex;
     flex-direction: row;
 
@@ -613,8 +617,19 @@ body{
 .qrcode__phone-middle { /*контейнер для центрального телефона*/
     position: absolute;
     z-index: 10;
+    padding-top: 220px;
+    padding-left: 638px;
 }
 .qrcode__phone-middle-ico { /*центральный телефон*/
+
+}
+.qrcode__phone-right { /*контейнер для правого телефона*/
+    position: absolute;
+    z-index: 10;
+    padding-top: 566px;
+    padding-left: 1051px;
+}
+.qrcode__phone-right-ico { /*правый телефон*/
 
 }
 /*QRCODE STYLE END*/
