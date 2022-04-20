@@ -667,8 +667,9 @@ body{
     height: 164px;
 }
 .generate__gradient { /*контейнер для градиента*/
+    margin-left: 213px;
     position: absolute;
-    z-index: 3;
+    z-index: 3; /*покрывает надписи NOTAB*/
     width: 1022px;
     height: 952px;
 
@@ -679,11 +680,31 @@ body{
     transform: rotate(-0.55deg);
 }
 .generate__phone { /*контейнер для картиник телефона*/
+    position: absolute;
+    z-index: 4; /*покрвает градиент*/
+    padding-top: 247px;
+    padding-left: 563px;
+}
+.generate__phone-ico-1 { /*картинка телефона*/
 
 }
-.generate__phone-ico { /*картинка телефона*/
-
+.generate__phone-ico-2 { /*картинка стрелки*/
+    padding-left: 40.5px; /* погдгонялось чутка figma 43.5*/
+    padding-bottom: 200px;
 }
+.generate__phone-text { /*текст возле стрелки*/
+    position: absolute;
+    padding-top: 290px;
+    margin-left: 455px; /*если был padding то текст сжимало*/
+    width: 155px;
+    height: 26px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25.6px;
+    color: #FFFFFF;
+}
+
 .generate__text { /*контейнер для текста*/
     padding-top: 143.7px;
     padding-left: 100px;
