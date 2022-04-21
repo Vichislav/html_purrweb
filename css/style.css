@@ -919,3 +919,108 @@ body{
     z-index: 3;
 }
 /*NOTAB STYLE END*/
+
+/*FORM STYLE START*/
+
+.form { /*общий контейнер*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form__headText { /*контейнер для текста сверху*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.form__headText-tittle { /*заголовок*/
+    margin-top: 53px;
+    width: 337px;
+    height: 62px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 51px;
+    line-height: 62px;
+    color: #FFFFFF;
+}
+.form__headText-subTittle { /*подзаголовок*/
+    margin-top: 23px;
+    width: 580px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 24.5px;
+    color: #FFFFFF;
+    text-align: center; /*текст по центру*/
+}
+.form__input { /*контейнер для импутов*/
+    margin-top: 82px;
+    width: 56.8%; /*из расчета что ширина импута 818 а общ ширина 1440*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.from__input-label {
+    width: 100%;
+}
+.whiteInput { /*общие стили для оформление импутов кроме Venue City & State City */
+    margin-top: 23px;
+    background: #FFFFFF;
+    border: 1px solid #5C5C5C;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 98%;
+    padding: 1%;
+    height: 83px;
+}
+.whiteInputCity {
+    margin-top: 23px;
+    background: #FFFFFF;
+    border: 1px solid #5C5C5C;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 83px;
+}
+::placeholder { /*общие свойства для placeholder*/
+    font-size: 18px;
+    line-height: 24.5px;
+    color: #BFBFBF;
+}
+.form__input-name { /*Name*/
+
+}
+.form__input-venueName { /*Venue Name*/
+
+}
+.form__input-duo { /*контейнер для импутов Venue City State City*/
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.form__input-venueCity { /*Venue City*/
+    width: 49%;
+    padding-right: 1%;
+}
+.form__input-stateName { /*State City*/
+    width: 49%;
+    padding-left: 1%;
+}
+.form__input-email { /*Email*/
+
+}
+.form__input-subject { /*Subject*/
+
+}
+.form__input-massage { /*Message*/
+    margin-top: 23px;
+    background: #FFFFFF;
+    border: 1px solid #5C5C5C;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 98%;
+    padding: 1%;
+    height: 199px; /*отличие от whiteInput*/
+}
+/*FORM STYLE END*/
