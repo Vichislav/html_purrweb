@@ -1073,7 +1073,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.from__button-send {  /*сама кнопка Send*/
+.form__button-send {  /*сама кнопка Send*/
     width: 48.66%;
     min-width: 345px;
     height: 80px;
@@ -1089,7 +1089,7 @@ body{
     line-height: 29px;
     color: #FFFFFF;
 }
-.from__button-send:hover, .from__button-send:focus, .from__button-send:active{
+.form__button-send:hover, .form__button-send:focus, .form__button-send:active{
     background: #a29b9b;
 }
 .form__download { /*контейнер для  надписи и двух кнопок*/
@@ -1125,8 +1125,39 @@ body{
    /* width: 185px;
     height: 60px;*/
 }
-
 /*FORM STYLE END*/
+
+
+/*SLIDER STYLE START*/
+
+.slider { /*общий контейнер*/
+    background-color: gray;
+}
+.slider__wrapper { /**/
+    width: 256px;
+    height: 256px;
+    border: 2px solid black;
+    margin: 30px auto;
+    overflow: hidden;
+}
+.slider__wrapper-line { /**/
+    width: 1024px;
+    height: 256px;
+    background-color: indigo;
+    display: flex;
+    position: relative;
+}
+.slider__button-left {
+    width: 100px;
+    height: 60px;
+}
+.slider__button-right {
+    width: 100px;
+    height: 60px;
+}
+/*SLIDER STYLE END*/
+
+
 
 /*FOOTER STYLE START*/
 .footer {
