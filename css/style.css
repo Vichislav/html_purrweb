@@ -1147,6 +1147,12 @@ body{
     display: flex;
     position: relative;
 }
+.slide {
+    display: none;
+}
+.slide.active {
+    display: block;
+}
 .slider__button-left {
     width: 100px;
     height: 60px;
@@ -1154,6 +1160,25 @@ body{
 .slider__button-right {
     width: 100px;
     height: 60px;
+}
+.dots__wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.dot.active {
+    background-color: #000000;
+}
+span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: darkslategray;
+    margin-right: 10px;
+    cursor: pointer;
+}
+span:last-child {
+    margin-right: 0;
 }
 /*SLIDER STYLE END*/
 
