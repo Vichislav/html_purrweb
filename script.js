@@ -32,7 +32,7 @@ const next = document.querySelector(`.slider__button-left`);
 const slides = document.querySelectorAll('.slide') /*псевдомассив элементов с классом slide*/
 const dots = document.querySelectorAll('.dot') /*псевдомассив элементов с классом dot*/
 
-let index = 0; /*номер картинке в коллекеции*/
+let index = -1; /*номер картинке в коллекеции*/
 const sliderLine = document.querySelector('.slider__wrapper-line'); /*блок с картинками*/
 let ofLeft = 0; /* конечная точка смещение блока от левого края*/
 let currentPosition = 0;
@@ -43,48 +43,50 @@ slides[0].style.left = 0 + 'px';
 slides[1].style.left = 256 + 'px';
 slides[2].style.left = 512 + 'px';
 slides[3].style.left = 768 + 'px';
+let timerLeft;
+let timerLastLeft;
 
 function muvLeft() {
-    if(index == slides.length - 1) {  /*если слайд последний то...*/
-        index = 0; /*переходим на первый*/
+    if(index == slides.length - 2) {  /*если слайд последний то...*/
         currentPosition = 0;
-        setInterval(lastLeft, 5);
-        console.log("lastLeft work")
+        console.log("if muvLeft work index = " + index + " currentPosition = " + currentPosition);
+        timerLastLeft = setInterval(lastLeft, 5);
+        index = 0;
+
     } else {
         index++;
-        console.log("muvLeft work")
-        setInterval(left, 5);
+        currentPosition = 0; /*???*/
+        console.log("else muvLeft work index = " + index + " currentPosition = " + currentPosition)
+        timerLeft = setInterval(left, 5);
     }
 }
 
 function lastLeft() {
     ofLeft = 256; /*сохраняем минимальное смещение в 256 px*/
+
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        clearInterval(lastLeft);
-        console.log("if lastLeft work")
+        clearInterval(timerLastLeft);
+        console.log("if lastLeft work index = " + index + " currentPosition = " + currentPosition);
     }
     else {
-        console.log("else lastLeft work") /*двигаем влево*/
+        console.log("else lastLeft work index = " + index + " currentPosition = " + currentPosition);
         currentPosition++;
-        slides[index].style.left = 256 -currentPosition + 'px';
-        slides[index - (slides.length - 1)].style.left = -currentPosition + 'px';
+        slides[slides.length - 1].style.left = (ofLeft-256) -currentPosition + 'px';
+        slides[index].style.left = ofLeft - currentPosition + 'px';
     }
 }
 function left() {
-    if(index == 0) {
         ofLeft = 256; /*(idex+1)*256?*/
-    }else {
-        ofLeft = index * 256; /*высчитываем край смещения*/
-    }
+
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        clearInterval(muvLeft);
-        console.log("if left work")
+        clearInterval(timerLeft);
+        console.log("if left work index = " + index + " currentPosition = " + currentPosition);
     }
     else {
-        console.log("else left work") /*двигаем влево*/
+        console.log("else left work index = " + index + " currentPosition = " + currentPosition);
         currentPosition++;
-        slides[index].style.left = -currentPosition + 'px';
-        slides[index - 1].style.left = -currentPosition + 'px';
+        slides[index].style.left = (ofLeft-256) -currentPosition + 'px'; /*движение текущего*/
+        slides[index + 1].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа*/
     }
 }
 document.querySelector(`.slider__button-right`).addEventListener('click', muvLeft);

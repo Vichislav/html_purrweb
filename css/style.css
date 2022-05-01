@@ -1138,7 +1138,7 @@ body{
     height: 256px;
     border: 2px solid black;
     margin: 30px auto;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 .slider__wrapper-line { /**/
     width: 1024px;
