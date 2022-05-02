@@ -36,28 +36,28 @@ let index = -1; /*номер картинке в коллекеции*/
 const sliderLine = document.querySelector('.slider__wrapper-line'); /*блок с картинками*/
 let ofLeft = 0; /* конечная точка смещение блока от левого края*/
 let currentPosition = 0;
-let endPoint = 1;
+let incr = 1;
 console.log(ofLeft);
 console.log(slides.length);
 slides[0].style.left = 0 + 'px';
 slides[1].style.left = 256 + 'px';
 slides[2].style.left = 512 + 'px';
 slides[3].style.left = 768 + 'px';
-let timerLeft;
-let timerLastLeft;
+let timer;
+let timerLast;
 
 function muvLeft() {
     if(index == slides.length - 2) {  /*если слайд последний то...*/
         currentPosition = 0;
-        console.log("if muvLeft work index = " + index + " currentPosition = " + currentPosition);
-        timerLastLeft = setInterval(lastLeft, 5);
         index = 0;
-
+        console.log("if muvLeft work index = " + index + " currentPosition = " + currentPosition);
+        timerLast = setInterval(lastLeft, 5);
+        incr = 0; /*замедляем инкремент*/
     } else {
-        index++;
+        index = index + incr;
         currentPosition = 0; /*???*/
         console.log("else muvLeft work index = " + index + " currentPosition = " + currentPosition)
-        timerLeft = setInterval(left, 5);
+        timer = setInterval(left, 5);
     }
 }
 
@@ -65,7 +65,7 @@ function lastLeft() {
     ofLeft = 256; /*сохраняем минимальное смещение в 256 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        clearInterval(timerLastLeft);
+        clearInterval(timerLast);
         console.log("if lastLeft work index = " + index + " currentPosition = " + currentPosition);
     }
     else {
@@ -75,12 +75,14 @@ function lastLeft() {
         slides[index].style.left = ofLeft - currentPosition + 'px';
     }
 }
+
 function left() {
         ofLeft = 256; /*(idex+1)*256?*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        clearInterval(timerLeft);
+        clearInterval(timer);
         console.log("if left work index = " + index + " currentPosition = " + currentPosition);
+        incr = 1; /*возвращаем инекременту его шаг*/
     }
     else {
         console.log("else left work index = " + index + " currentPosition = " + currentPosition);
@@ -89,16 +91,8 @@ function left() {
         slides[index + 1].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа*/
     }
 }
-document.querySelector(`.slider__button-right`).addEventListener('click', muvLeft);
+document.querySelector(`.slider__button-left`).addEventListener('click', muvLeft);
 
-/* /!*СМЕЩЕНИЕ ВЛЕВО БЕЗ АНИМАЦИИ*!/
-document.querySelector('.slider__button-left').addEventListener('click', function (){
-    offset = offset + 256;
-    if (offset > 768) {
-        offset = 0;
-    }
-    sliderLine.style.left = -offset + 'px';
-});*/
 
 
 
