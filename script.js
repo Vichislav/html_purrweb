@@ -32,11 +32,11 @@ const next = document.querySelector(`.slider__button-left`);
 const slides = document.querySelectorAll('.slide') /*псевдомассив элементов с классом slide*/
 const dots = document.querySelectorAll('.dot') /*псевдомассив элементов с классом dot*/
 
-let index = -1; /*номер картинке в коллекеции*/
+let index = 0; /*номер картинке в коллекеции*/
 const sliderLine = document.querySelector('.slider__wrapper-line'); /*блок с картинками*/
 let ofLeft = 0; /* конечная точка смещение блока от левого края*/
 let currentPosition = 0;
-let incr = 1;
+let startMuv = true; /*true можно начать выполнять функцию, false - нельзя*/
 console.log(ofLeft);
 console.log(slides.length);
 slides[0].style.left = 0 + 'px';
@@ -47,18 +47,23 @@ let timer;
 let timerLast;
 
 function muvLeft() {
-    if(index == slides.length - 2) {  /*если слайд последний то...*/
-        currentPosition = 0;
-        index = 0;
-        console.log("if muvLeft work index = " + index + " currentPosition = " + currentPosition);
-        timerLast = setInterval(lastLeft, 5);
-        incr = 0; /*замедляем инкремент*/
-    } else {
-        index = index + incr;
-        currentPosition = 0; /*???*/
-        console.log("else muvLeft work index = " + index + " currentPosition = " + currentPosition)
-        timer = setInterval(left, 5);
-    }
+   if (startMuv) {
+       if(index == slides.length - 1) {  /*если слайд последний то...*/
+           /*точка входа*/
+           startMuv = false;
+           currentPosition = 0;
+           index = 0;
+           console.log("if muvLeft work index = " + index + " currentPosition = " + currentPosition);
+           timerLast = setInterval(lastLeft, 5);
+
+       } else {
+           /*точка входа*/
+           startMuv = false;
+           currentPosition = 0; /*???*/
+           console.log("else muvLeft work index = " + index + " currentPosition = " + currentPosition)
+           timer = setInterval(left, 5);
+       }
+   }
 }
 
 function lastLeft() {
@@ -67,30 +72,69 @@ function lastLeft() {
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         clearInterval(timerLast);
         console.log("if lastLeft work index = " + index + " currentPosition = " + currentPosition);
+        startMuv = true;
+        index = 0;
+        /*точка выхода*/
     }
     else {
         console.log("else lastLeft work index = " + index + " currentPosition = " + currentPosition);
-        currentPosition++;
-        slides[slides.length - 1].style.left = (ofLeft-256) -currentPosition + 'px';
-        slides[index].style.left = ofLeft - currentPosition + 'px';
+        incrementLeft(slides.length - 1, index);
+        activeDot(index);
     }
 }
 
 function left() {
-        ofLeft = 256; /*(idex+1)*256?*/
+    ofLeft = 256; /*(idex+1)*256?*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
+        index++
         clearInterval(timer);
         console.log("if left work index = " + index + " currentPosition = " + currentPosition);
-        incr = 1; /*возвращаем инекременту его шаг*/
+        startMuv = true;
+        /*точка выхода*/
     }
     else {
         console.log("else left work index = " + index + " currentPosition = " + currentPosition);
-        currentPosition++;
-        slides[index].style.left = (ofLeft-256) -currentPosition + 'px'; /*движение текущего*/
-        slides[index + 1].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа*/
+        incrementLeft(index, index+1);
+        activeDot(index+1);
     }
 }
+
+function incrementLeft(firstInd, secondInd) { /*функция смещения двух слайдов*/
+    currentPosition++;
+    slides[firstInd].style.left = (ofLeft-256) -currentPosition + 'px'; /*движение текущего (кто уйдет)*/
+    slides[secondInd].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа (кто останется)*/
+}
+
+
+function activeDot (n) { /*функция для выделения текущей точки*/
+    for(dot of dots) {
+        dot.classList.remove('active');
+    }
+    dots[n].classList.add('active')
+}
+
+function incrementLeftDot() { /*функция смещения двух слайдов*/
+    currentPosition++;
+    slides[index].style.left = (ofLeft - 256) - currentPosition + 'px'; /*движение текущего (кто уйдет)*/
+    slides[index + 1].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа (кто останется)*/
+}
+
+dots.forEach((itemD, indexDot) =>{
+    itemD.addEventListener('click', () => {
+        console.log(indexDot + 'я снаружи');
+            if (indexDot > index) {
+                let cycleInd = indexDot - index; /*это бы было бы колличеством раз прокрутки...*/
+                console.log(indexDot + 'я внутри');
+                timer = setInterval(left, 5);
+                currentPosition = 0;
+            }
+
+        if (indexDot === index) {}
+        if (indexDot < index) {}
+    })
+})
+
 document.querySelector(`.slider__button-left`).addEventListener('click', muvLeft);
 
 
