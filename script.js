@@ -69,7 +69,27 @@ function moveLeft() {
    }
 }
 
-function lastLeft() {
+function moveRight() {
+    if (startMove) {
+        if(index == 0) {  /*если слайд последний то...*/
+            /*точка входа*/
+            startMove = false;
+            currentPosition = 0;
+            index = slides.length - 1;
+            console.log("if muvLeft work index = " + index + " currentPosition = " + currentPosition);
+            timerLast = setInterval(lastRight, 5);
+
+        } else {
+            /*точка входа*/
+            startMove = false;
+            currentPosition = 0; /*???*/
+            console.log("else muvLeft work index = " + index + " currentPosition = " + currentPosition)
+            timer = setInterval(right, 5);
+        }
+    }
+}
+
+function lastLeft() { /*смещение последнего слайда с перемещением первого на его место*/
     ofLeft = 256; /*сохраняем минимальное смещение в 256 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
@@ -86,8 +106,25 @@ function lastLeft() {
     }
 }
 
-function left() {
-    ofLeft = 256; /*(idex+1)*256?*/
+function lastRight() { /*смещение первого слайда с перемещением последнего на его место*/
+    ofLeft = 256; /*сохраняем минимальное смещение в 256 px*/
+
+    if (currentPosition == ofLeft) {  /*останавливаем движение*/
+        clearInterval(timerLast);
+        console.log("if lastLeft work index = " + index + " currentPosition = " + currentPosition);
+        startMove = true;
+        index = slides.length - 1;
+        /*точка выхода*/
+    }
+    else {
+        console.log("else lastLeft work index = " + index + " currentPosition = " + currentPosition);
+        incrementRight(0, slides.length - 1);
+        activeDot(slides.length - 1);
+    }
+}
+
+function left() { /*функция смещения двух слайдов*/
+    ofLeft = 256;
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         index++;
@@ -104,12 +141,35 @@ function left() {
     }
 }
 
-function incrementLeft(firstInd, secondInd) { /*функция смещения двух слайдов*/
+function right() { /*функция смещения двух слайдов*/
+    ofLeft = 256;
+
+    if (currentPosition == ofLeft) {  /*останавливаем движение*/
+        index--;
+        currentPosition = 0; /*???*/
+        clearInterval(timer);
+        console.log("if left work index = " + index + " currentPosition = " + currentPosition);
+        startMove = true;
+        /*точка выхода*/
+    }
+    else {
+        console.log("else left work index = " + index + " currentPosition = " + currentPosition);
+        incrementRight(index, index-1);
+        activeDot(index-1);
+    }
+}
+
+function incrementLeft(firstInd, secondInd) { /*функция смещения на 1 px двух слайдов влево*/
     currentPosition++;
-    slides[firstInd].style.left = (ofLeft-256) -currentPosition + 'px'; /*движение текущего (кто уйдет)*/
+    slides[firstInd].style.left = (ofLeft-256) - currentPosition + 'px'; /*движение текущего (кто уйдет)*/
     slides[secondInd].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа (кто останется)*/
 }
 
+function incrementRight(firstInd, secondInd) { /*функция смещения на 1 px двух слайдов вправо*/
+    currentPosition++;
+    slides[firstInd].style.left = (ofLeft-256) + currentPosition + 'px'; /*движение текущего (кто уйдет)*/
+    slides[secondInd].style.left = -ofLeft + currentPosition + 'px'; /*движение предыдущего, слева (кто останется)*/
+}
 
 function activeDot (n) { /*функция для выделения текущей точки*/
     for(dot of dots) {
@@ -141,6 +201,7 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
 })
 
 document.querySelector(`.slider__button-left`).addEventListener('click', moveLeft);
+document.querySelector(`.slider__button-right`).addEventListener('click', moveRight);
 
 
 
