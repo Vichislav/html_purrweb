@@ -1131,24 +1131,51 @@ body{
 /*SLIDER STYLE START*/
 
 .slider { /*общий контейнер*/
-    background-color: gray;
+    margin-top: 100px;
+    background-color: black;
+    position: relative;
+    z-index: 0;
+}
+.slider__gradient { /*контейнер для градиента нижнего*/
+    position: absolute;
+    z-index: 1;
+    margin-left: 42%;
+    width: 256px;
+    height: 256px;
+
+    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+    opacity: 0.8;
+    filter: blur(50px);
 }
 .slider__wrapper { /**/
     width: 256px;
     height: 256px;
-    border: 2px solid black;
     margin: 30px auto;
-    /*overflow: hidden;*/
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 .slider__wrapper-line { /**/
     width: 1024px;
     height: 256px;
-    background-color: indigo;
+    background-color: black;
     display: flex;
     position: relative;
+    z-index: 0;
+}
+.slider__wrapper-gradient { /*контейнер для градиента нижнего*/
+    position: absolute;
+    z-index: 1;
+    width: 256px;
+    height: 256px;
+
+    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+    opacity: 0.8;
+    filter: blur(60px);
 }
 .slide {
     position: absolute;
+    z-index: 2;
     display: none;
 }
 .slider__button {
@@ -1195,7 +1222,7 @@ body{
     margin-top: 15px;
 }
 .dot.active {
-    background-color: #000000;
+    background-color: #F101BF;
 }
 span {
     width: 15px;
