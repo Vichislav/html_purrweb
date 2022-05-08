@@ -1,0 +1,135 @@
+/***/ /*означает, что строка изменена или создана*/
+
+@media only screen and (max-width: 1100px) {
+
+    /*HEADER STYLE START*/
+    .header__wrapper {
+        width: 92%; /*15+345+15 = 375*/
+        flex-wrap: nowrap;
+    }
+    .header__cube-svg { /*синий кубик изменен размер*/
+        width: 51.73px; /***/
+        height: 52.69px;
+    }
+
+    .header__noTab-text { /*изменен размер самой натписи NoTab*/
+        width: 46.41px; /***/
+        height: 11.96px; /***/
+    }
+
+    .header__nav {
+        padding-left: 185px; /*108 (205)*/
+    }
+    .header__nav-item-logo {
+        display: none; /***/
+    }
+
+    .header__nav-item-link {
+        font-size: 14px; /***/
+    }
+    /*HEADER STYLE END***************************************************/
+
+    /*INTRO STYLE START*/
+    .intro__wrapper { /*почти тоже самое, что и в классе header__wrapper надо будет объединить*/
+        width: 92%; /***/
+        max-width: 1240px;
+        margin: auto; /*выставляет див с этим классом по центру в его родителе*/
+        display: flex;
+        flex-direction: column; /*ОТЛИЧИЕ от  header__wrapper */
+        justify-content: flex-start;
+        flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
+        background-color: black;
+    }
+    .intro__wrapper-1 {
+        display: flex;
+        flex-direction: row;
+    }
+    .intro__textBlock {
+        min-height: 323px; /*700*/
+
+    }
+    .intro__textBlock-item-1 {
+        padding-top: 98.31px; /*154*/
+        width: 207px; /***/
+        height: 120px; /***/
+    }
+    .intro__textBlock-item-1-text {
+        font-size: 35px; /***/
+        line-height: 40px; /***/
+    }
+
+    .intro__imgBlock { /*контейнер для градиента и картики айфона*/
+        position: relative;
+        padding-left: 15px; /*погонядлось в figma 180*/
+    }
+    .intro__imgBlock-ico {  /*сама картинка айфона*/
+        margin-top: 82px; /***/
+        width: 161px; /***/
+        height: 323px; /***/
+    }
+    .intro_imgBlock-gradient { /*градиент собственно*/
+        width: 363.95px; /***/
+        height: 430.08px; /***/
+        left: -150px; /***/
+        top: 22px; /***/
+        background: rgba(250, 0, 255, 0.5); /***/
+        filter: blur(250px);
+        transform: rotate(-90.69deg); /***/
+    }
+    .intro__textBlock-item-2 {
+        padding-top: 125px; /*55*/
+    }
+    .intro__textBlock-item-2-gradient { /*контейнер для градиента*/
+        margin-bottom: 32px; /***/
+        margin-right: 185px; /***/
+        height: 74px; /***/
+        width: 74px; /***/
+    }
+    .intro__textBlock-item-2-img { /*контейнер картинки-линии*/
+        display: none; /***/
+    }
+    .intro__textBlock-item-2-text {
+        width: 240px; /***/
+        height: 88px; /***/
+        font-style: normal; /***/
+        font-weight: 400; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
+    }
+    .intro__footer {
+        width: 92%; /***/
+        margin-top: 113px; /***/
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .intro__footer-item-1 {
+       min-width: 283px; /***/
+    }
+    .intro__footer-item-1-text {
+        font-size: 24px; /***/
+        line-height: 29px; /***/
+
+    }
+    .intro__footer-item-2 {
+        margin-top: 34px; /***/
+        padding-left: 0; /***/
+    }
+    .intro__footer-item-2-ico {
+        width: 185px; /***/
+        height: 60px; /***/
+    }
+
+    .intro__footer-item-3 {
+        margin-top: 24px; /***/
+        padding-left: 0; /***/
+    }
+
+    .intro__footer-item-3-ico {
+        width: 185px; /***/
+        height: 60px; /***/
+    }
+    /*INTRO STYLE END*/
+}

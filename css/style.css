@@ -79,7 +79,6 @@ body{
     background-color: gray;
 }
 
-/*HEADER STYLE START*/
 .wrapper {
     position: relative;
     width: 100%;
@@ -87,6 +86,8 @@ body{
     margin: auto;
     background: #0c0c0c;
 }
+
+/*HEADER STYLE START*/
 
 .header__wrapper {
     width: 80%;
@@ -151,7 +152,7 @@ body{
 }
 .intro__textBlock {
     min-height: 700px;
-    /*background: url("../img/intro-ifon.png") no-repeat right;*/
+
 }
 .intro__textBlock-item-1 {
     padding-top: 154px;
