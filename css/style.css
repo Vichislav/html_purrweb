@@ -353,8 +353,6 @@ body{
 /*MISSION STYLE START*/
 .mission {
     width: 100%;
-    /*max-width: 1440px;*/
-    /*min-height: 300px;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

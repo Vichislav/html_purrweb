@@ -204,41 +204,128 @@
     /*MISSION STYLE START*/
     .mission {
         width: 100%;
-        max-width: 1440px;
-        min-height: 300px;
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+    }
+    .mission__img { /*контейнер картинки*/
+        height: 604px;
+        width: 100%;
+        display: flex;
+
+        justify-content: center;
+    }
+    .mission__img-ico { /*сама картинка*/
+        top: 0;
+       margin-top: 163px;
+        position: relative;
+        width: 172.53px;
+        height: 346.12px;
+        transform: rotate(0deg);
+    }
+    .mission__text { /*первый контейнер текста*/
+        max-width: 358px;
+        padding-left: 15px;
+        margin-left: 0;
+
+    }
+    .mission__text-container { /*второй контейнер текста*/
+        position: relative;
+        z-index: 0;
+    }
+    .mission__text-gradient {
+        left: -17px;
+        top: 86px;
+    }
+    .mission__text-title { /*заголовок*/
+        padding-top: 110px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .mission__text-content { /*основный текст*/
+        width: 315px;
+        height: 132px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    /*MISSION STYLE END*/
+
+    /*IDScanner STYLE START*/
+
+    .IDScanner { /*общий контейнер*/
+        position: relative;
+        z-index: 1; /*слой IDScanner*/
+        width: 1440px;
+        height: 1134px;
+    }
+
+    .IDScanner__img { /*контенер для гардиента и картинки бармена*/
+        position: absolute;
+        z-index: 2;  /*слой IDScanner__img & IDScanner*/
+
+    }
+    .IDScanner__img-gradient {  /*контенер для градиента*/
+        position: absolute;
+        z-index: 4; /*слой IDScanner__img*/
+        width: 457px;
+        height: 300px;
+
+        background: linear-gradient(179.83deg, #000000 -1.85%, rgba(0, 0, 0, 0.67) 11.21%, rgba(0, 0, 0, 0) 54.71%, #000000 83.92%);
+    }
+    .IDScanner__img-ico { /*картинка бармена*/
+        position: relative;
+        z-index: 3; /*слой IDScanner__img*/
+        width: 457px; /***/
+        height: 300px; /***/
+        opacity: 0.5;
+    }
+    .IDScanner__content { /*контенер для двух телефонов и текста*/
+        padding-top: 467px;
+        position: absolute;
+        z-index: 3; /*слой IDScanner (поверх всех по идее)*/
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
     }
-    .mission__img { /*контейнер картинки*/
+    .IDScanner__content-img-1 { /*контенер 1 телефона*/
+        padding-left: 100px;
+    }
+    .IDScanner__content-img-1-ico { /*1 телефон (левый)*/
+        width: 278px;
+        height: 576px;
+    }
+    .IDScanner__content-img-2 { /*контенер 2 телефона*/
+        padding-left: 49.5px;
+    }
+    .IDScanner__content-img-2-ico { /*2 телефон (правый)*/
+        width: 278px;
+        height: 576px;
+    }
+    .IDScanner__content-text { /*контейнер для текстовых блоков*/
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-left: 128.44px;
+        padding-top: 387px; /*похоже надо будет подгонять*/
+    }
+    .IDScanner__content-text-tittle { /*титул*/
 
-    }
-    .mission__img-ico { /*сама картинка*/
-        max-width: 918px;
-        min-height: 498px;
-    }
-    .mission__text { /*первый контейнер текста*/
-        max-width: 358px;
-
-    }
-    .mission__text-container { /*второй контейнер текста*/
-
-    }
-    .mission__text-title { /*заголовок*/
-        padding-top: 180px; /*подгонялос в было figma 236*/
+        width: 400px;
+        height: 62px;
 
         font-weight: 700;
         font-size: 51px;
         line-height: 62px;
         color: #FFFFFF;
     }
-    .mission__text-content { /*основный текст*/
-        max-width: 315px;
+    .IDScanner__content-text-paragraph { /*абзац*/
         padding-top: 23px;
+        width: 316px;
+        height: 125px;
         font-size: 18px;
         line-height: 24.5px;
         color: #FFFFFF;
     }
-    /*MISSION STYLE END*/
-
+    /*IDScanner STYLE END*/
 }
