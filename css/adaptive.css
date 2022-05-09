@@ -132,4 +132,113 @@
         height: 60px; /***/
     }
     /*INTRO STYLE END*/
+
+    /*COMBINER STYLE START*/
+
+    .combiner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*COMBINER STYLE END*/
+
+    /*COOKIE STYLE START*/
+    .cookie {
+        order: 3; /***/
+    }
+
+    .cookie__item-1 {
+        padding-left: 15px; /***/
+    }
+    .cookie__item-text {
+        font-size: 12px; /***/
+        line-height: 16.34px; /***/
+        width: 200px; /***/
+    }
+
+    .cookie__item-2 {
+        padding-right: 15px; /***/
+    }
+
+    .cookie__item-button {
+        width: 92px; /***/
+    }
+    /*COOKIE STYLE END*/
+
+    /*INFO__WINDOWS STYLE START*/
+
+    .info__windows {
+        width: 92%; /***/
+        margin: auto; /*выставляет див с этим классом по центру в его родителе*/
+
+        padding-left: 0;   /***/
+        padding-right: 0;  /***/
+    }
+    .info__window-wrap-border-1 {
+        width: 345px; /***/
+        height: 233px; /***/
+        padding-left: 33px; /***/
+    }
+    .info__window-wrap-border-2 {
+        margin-top: 30px;
+        width: 345px; /***/
+        height: 167px; /***/
+        padding-left: 33px; /***/
+    }
+    .info__window-mail {
+        height: 154px; /***/
+    }
+    .info__windows-login {
+        height: 88px; /***/
+    }
+    .info__windows-text {
+        font-size: 24px; /***/
+        line-height: 33px; /***/
+    }
+    .info__windows-link {
+        font-size: 18px; /***/
+        line-height: 25px; /***/
+    }
+    /*INFO__WINDOWS STYLE END*/
+
+    /*MISSION STYLE START*/
+    .mission {
+        width: 100%;
+        max-width: 1440px;
+        min-height: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .mission__img { /*контейнер картинки*/
+
+    }
+    .mission__img-ico { /*сама картинка*/
+        max-width: 918px;
+        min-height: 498px;
+    }
+    .mission__text { /*первый контейнер текста*/
+        max-width: 358px;
+
+    }
+    .mission__text-container { /*второй контейнер текста*/
+
+    }
+    .mission__text-title { /*заголовок*/
+        padding-top: 180px; /*подгонялос в было figma 236*/
+
+        font-weight: 700;
+        font-size: 51px;
+        line-height: 62px;
+        color: #FFFFFF;
+    }
+    .mission__text-content { /*основный текст*/
+        max-width: 315px;
+        padding-top: 23px;
+        font-size: 18px;
+        line-height: 24.5px;
+        color: #FFFFFF;
+    }
+    /*MISSION STYLE END*/
+
 }

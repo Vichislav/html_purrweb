@@ -215,6 +215,8 @@ body{
     font-size: 20px;
     line-height: 27px;
     color: #FFFFFF;
+    width: 380px;
+    height: 81px;
 }
 .intro__footer {
     display: flex;
@@ -307,7 +309,7 @@ body{
     justify-content: space-between;
 
 }
-.info__window-wrap-border {
+.info__window-wrap-border-1, .info__window-wrap-border-2 {
     width: 503px;
     height: 312px;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -351,27 +353,47 @@ body{
 /*MISSION STYLE START*/
 .mission {
     width: 100%;
-    max-width: 1440px;
-    min-height: 300px;
+    /*max-width: 1440px;*/
+    /*min-height: 300px;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 .mission__img { /*контейнер картинки*/
-
+    height: 1027px;
+    width: 751px;
 }
 .mission__img-ico { /*сама картинка*/
-    max-width: 918px;
-    min-height: 498px;
+    top: -60px;
+    position: relative;
+    width: 498px;
+    height: 999px;
+    transform: rotate(90deg);
 }
 .mission__text { /*первый контейнер текста*/
     max-width: 358px;
+    margin-left: 167px;
 
 }
 .mission__text-container { /*второй контейнер текста*/
+    position: relative;
+    z-index: 0;
+}
+.mission__text-gradient {
+    position: absolute;
+    z-index: 1;
+    width: 85px;
+    height: 85px;
+    left: 197px;
+    top: 177px;
+    background: #F101BF;
+    opacity: 0.9; /*измененно а то не видать [0.8]*/
+    filter: blur(64px); /*измененно а то не видать [100]*/
 
 }
 .mission__text-title { /*заголовок*/
+    position: relative;
+    z-index: 2;
     padding-top: 180px; /*подгонялос в было figma 236*/
     font-family: Montserrat;
     font-weight: 700;
