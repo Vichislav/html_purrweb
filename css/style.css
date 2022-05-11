@@ -135,7 +135,9 @@ body{
 
 /*INTRO STYLE START*/
 
-
+.intro {
+    overflow: hidden;
+}
 .intro__wrapper { /*почти тоже самое, что и в классе header__wrapper надо будет объединить*/
     width: 80%;
     max-width: 1240px;
@@ -360,6 +362,7 @@ body{
 .mission__img { /*контейнер картинки*/
     height: 1027px;
     width: 751px;
+    overflow: hidden;
 }
 .mission__img-ico { /*сама картинка*/
     top: -60px;
@@ -432,7 +435,7 @@ body{
 .IDScanner__img-ico { /*картинка бармена*/
     position: relative;
     z-index: 3; /*слой IDScanner__img*/
-    width: 1440px;
+    width: 100%; /*было 1440px*/
     height: 836px;
     opacity: 0.5;
 }
@@ -488,7 +491,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 1440px;
+    width: 100%;
     height: 730px;
 }
 .tool__gradient { /*контейнер для контейнера с градиентом*/
@@ -523,7 +526,7 @@ body{
 
 }
 .tool__text-content { /*основной текст*/
-    padding-top: 23px;
+    margin-top: 23px;
     width: 395px;
     height: 119px;
     font-size: 18px;

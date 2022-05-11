@@ -254,78 +254,255 @@
     /*IDScanner STYLE START*/
 
     .IDScanner { /*общий контейнер*/
-        position: relative;
+        position: relative; /*зачем ...*/
         z-index: 1; /*слой IDScanner*/
-        width: 1440px;
-        height: 1134px;
+        height: 1789px; /***/
     }
 
     .IDScanner__img { /*контенер для гардиента и картинки бармена*/
         position: absolute;
         z-index: 2;  /*слой IDScanner__img & IDScanner*/
-
     }
     .IDScanner__img-gradient {  /*контенер для градиента*/
-        position: absolute;
-        z-index: 4; /*слой IDScanner__img*/
-        width: 457px;
-        height: 300px;
+        width: 457px; /***/
+        height: 300px; /***/
 
         background: linear-gradient(179.83deg, #000000 -1.85%, rgba(0, 0, 0, 0.67) 11.21%, rgba(0, 0, 0, 0) 54.71%, #000000 83.92%);
     }
     .IDScanner__img-ico { /*картинка бармена*/
-        position: relative;
+        position: relative; /**/
         z-index: 3; /*слой IDScanner__img*/
         width: 457px; /***/
         height: 300px; /***/
-        opacity: 0.5;
     }
     .IDScanner__content { /*контенер для двух телефонов и текста*/
-        padding-top: 467px;
-        position: absolute;
+        padding-top: 227px; /***/
+        position: relative; /***/
         z-index: 3; /*слой IDScanner (поверх всех по идее)*/
+        flex-direction: column; /***/
+
+    }
+    .IDScanner__content-img-1 { /*контенер 1 телефона*/
+        padding-top: 100px; /***/
+        padding-left: 44px; /***/
+        order: 2; /***/
+    }
+    .IDScanner__content-img-1-ico { /*1 телефон (левый)*/
+        width: 278px; /***/
+        height: 576px; /***/
+    }
+    .IDScanner__content-img-2 { /*контенер 2 телефона*/
+        padding-top: 55px; /***/
+        padding-left: 44px; /***/
+        order: 3; /***/
+    }
+    .IDScanner__content-img-2-ico { /*2 телефон (правый)*/
+        width: 278px; /***/
+        height: 576px; /***/
+    }
+    .IDScanner__content-text { /*контейнер для текстовых блоков*/
+        order: 1; /***/
+        padding-left: 15px; /***/
+        padding-top: 0; /*похоже надо будет подгонять*/
+    }
+    .IDScanner__content-text-tittle { /*титул*/
+        width: 138px; /***/
+        height: 29px; /***/
+        font-size: 24px; /***/
+        line-height: 29px; /***/
+
+    }
+    .IDScanner__content-text-paragraph { /*абзац*/
+        padding-top: 24px; /***/
+        width: 345px; /***/
+        height: 88px; /***/
+        font-weight: 400; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
+    }
+    /*IDScanner STYLE END*/
+
+    /*TOOL STYLE START*/
+    .tool { /*общий*/
+        width: 100%; /***/
+        height: 452px; /***/
+    }
+    .tool__gradient { /*контейнер для контейнера с градиентом*/
+       visibility: hidden; /***/
+    }
+    .tool__text { /*контейнер для текста*/
+        padding-top: 0; /***/
+        padding-left: 15px; /***/
+
+    }
+    .tool__text-tittle { /*текст загаловок*/
+        width: 234px; /***/
+        height: 29px; /***/
+        font-style: normal; /***/
+        font-weight: 700; /***/
+        font-size: 24px; /***/
+        line-height: 29px; /***/
+
+    }
+    .tool__text-content { /*основной текст*/
+        margin-top: 24px; /***/
+        width: 338px; /***/
+        height: 88px; /***/
+        font-weight: 400; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
+
+    }
+    .tool__img { /*контенер контейнеров для графиков*/
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 311px;
+        overflow: hidden;
+    }
+    .tool__img-chart-1 { /*контейнер для графика 1, ЧБ график*/
+        width: 38.4%; /*от 375 от ширины экрана телефона*/
+        padding-top: 159px; /***/
+        padding-left: 0; /***/
+        left: -30px; /***/
+        z-index: 7; /***/
+    }
+    .tool__img-chart-2 { /*контейнер для графика 2, круговые диаграммы 4 шт*/
+        width: 29.18%; /*от 375 от ширины экрана телефона*/
+        padding-top: 83px; /***/
+        padding-left: 0; /***/
+        left: 36px; /***/
+    }
+    .tool__img-chart-3 { /*контейнер для графика 3, диаграмма с лампой*/
+        width: 22.83%; /*от 375 от ширины экрана телефона*/
+        padding-top: 30px; /***/
+        padding-left: 0; /***/
+        left: 279px; /***/
+    }
+    .tool__img-chart-4 { /*контейнер для графика 4, график ломанный двойной*/
+        visibility: hidden;
+    }
+    .tool__img-chart-5 { /*контейнер для графика 5, график склаженный*/
+        width: 24.25%; /*от 375 от ширины экрана телефона*/
+        padding-top: 66px; /***/
+        padding-left: 0; /***/
+        left: 193px; /***/
+    }
+    .tool__img-chart-6 { /*контейнер для графика 6, гистаграммы столбцы*/
+        width: 24.25%; /*от 375 от ширины экрана телефона*/
+        padding-top: 126px; /***/
+        padding-left: 0; /***/
+        left: 134px; /***/
+    }
+    .tool__img-chart-7 { /*контейнер для графика 6, диаграммы круговые с процентами*/
+        width: 78.93%; /*от 375 от ширины экрана телефона*/
+        padding-top: 217px; /***/
+        padding-left: 0; /***/
+        left: 163px; /***/
+    }
+    /*TOOL STYLE END*/
+    /*QRCODE STYLE START*/
+
+    .qrcode { /*общий контейнер секции*/
+        padding-top: 218px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-    }
-    .IDScanner__content-img-1 { /*контенер 1 телефона*/
-        padding-left: 100px;
-    }
-    .IDScanner__content-img-1-ico { /*1 телефон (левый)*/
-        width: 278px;
-        height: 576px;
-    }
-    .IDScanner__content-img-2 { /*контенер 2 телефона*/
-        padding-left: 49.5px;
-    }
-    .IDScanner__content-img-2-ico { /*2 телефон (правый)*/
-        width: 278px;
-        height: 576px;
-    }
-    .IDScanner__content-text { /*контейнер для текстовых блоков*/
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding-left: 128.44px;
-        padding-top: 387px; /*похоже надо будет подгонять*/
-    }
-    .IDScanner__content-text-tittle { /*титул*/
+        height: 1224px;
 
-        width: 400px;
+    }
+
+    .qrcode__left { /*контейнер для контента слева*/
+        position: relative;
+        width: 775px;
+        z-index: 1;
+    }
+    .qrcode__left-gradient { /*контейнер для градиента*/
+        position: absolute;
+        z-index: 3; /*покрывает картинку dj*/
+        width: 775px;
+        height: 682px;
+        background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
+    }
+    .qrcode__left-ico { /*картинка диджея*/
+        position: absolute;
+        z-index: 2;
+        width: 775px;
+    }
+    .qrcode__left-content { /*контейнер для текстово контента и кнопок слева внизу*/
+        position: absolute;
+        z-index: 4; /*покрывает градиент и картинку dj*/
+        padding-top: 537px;
+        padding-left: 195px;
+    }
+    .qrcode__left-content-text { /*контейнер для текста*/
+        width: 376px; /*что бы кнопки с магазинами влазили в строку*/
+    }
+    .qrcode__left-content-text-tittle { /*заголовок*/
+        width: 226px;
         height: 62px;
-
+        font-family: Montserrat;
         font-weight: 700;
         font-size: 51px;
         line-height: 62px;
         color: #FFFFFF;
     }
-    .IDScanner__content-text-paragraph { /*абзац*/
+    .qrcode__left-content-text-paragraph { /*абзац*/
         padding-top: 23px;
-        width: 316px;
+        width: 315px;
         height: 125px;
         font-size: 18px;
         line-height: 24.5px;
         color: #FFFFFF;
     }
-    /*IDScanner STYLE END*/
+    .qrcode__left-content-text-button { /*контейнер для кнопок*/
+        position: absolute;
+        z-index: 11;
+
+        padding-top: 785px;
+        padding-left: 182px;
+        display: flex;
+        flex-direction: row;
+
+    }
+    .qrcode__left-content-text-button-app { /*контейнер App*/
+
+    }
+    .qrcode__left-content-text-button-google { /*контейнер googleStore*/
+        padding-left: 28px;
+    }
+
+    .qrcode__right { /*контейнер для контента справа*/
+        position: relative;
+        width: 651px;
+    }
+    .qrcode__right-img { /*контейнер для картинки стакана и надписи*/
+
+    }
+    .qrcode__right-img-ico-1 { /*картинка сткана*/
+        position: absolute;
+    }
+    .qrcode__right-img-ico-2 { /*надпись nightlife*/
+        position: absolute;
+        padding-left: 410px;
+    }
+    .qrcode__phone-middle { /*контейнер для центрального телефона*/
+        position: absolute;
+        z-index: 10;
+        padding-top: 220px;
+        padding-left: 638px;
+    }
+    .qrcode__phone-middle-ico { /*центральный телефон*/
+
+    }
+    .qrcode__phone-right { /*контейнер для правого телефона*/
+        position: absolute;
+        z-index: 10;
+        padding-top: 566px;
+        padding-left: 1051px;
+    }
+    .qrcode__phone-right-ico { /*правый телефон*/
+
+    }
+    /*QRCODE STYLE END*/
 }
