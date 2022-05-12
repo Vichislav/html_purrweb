@@ -404,72 +404,77 @@
     /*QRCODE STYLE START*/
 
     .qrcode { /*общий контейнер секции*/
-        padding-top: 218px;
+        padding-top: 0; /***/
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        height: 1224px;
-
+        height: 750px; /***/
     }
 
     .qrcode__left { /*контейнер для контента слева*/
         position: relative;
-        width: 775px;
+        width: 100%; /***/
+        height: 418px; /***/
         z-index: 1;
+        overflow: hidden; /***/
+
     }
     .qrcode__left-gradient { /*контейнер для градиента*/
         position: absolute;
         z-index: 3; /*покрывает картинку dj*/
-        width: 775px;
-        height: 682px;
+        width: 416px; /***/
+        height: 335px; /***/
         background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
     }
     .qrcode__left-ico { /*картинка диджея*/
         position: absolute;
         z-index: 2;
-        width: 775px;
+        width: 416px; /***/
+        height: 335px; /***/
+        left: -28px; /***/
     }
     .qrcode__left-content { /*контейнер для текстово контента и кнопок слева внизу*/
         position: absolute;
         z-index: 4; /*покрывает градиент и картинку dj*/
-        padding-top: 537px;
-        padding-left: 195px;
+        padding-top: 227px; /***/
+        padding-left: 15px; /***/
+        overflow: hidden; /***/
     }
     .qrcode__left-content-text { /*контейнер для текста*/
-        width: 376px; /*что бы кнопки с магазинами влазили в строку*/
+        width: 376px;
     }
     .qrcode__left-content-text-tittle { /*заголовок*/
-        width: 226px;
-        height: 62px;
-        font-family: Montserrat;
-        font-weight: 700;
-        font-size: 51px;
-        line-height: 62px;
-        color: #FFFFFF;
+        width: 107px; /***/
+        height: 29px; /***/
+        font-size: 24px; /***/
+        line-height: 29px; /***/
+
     }
     .qrcode__left-content-text-paragraph { /*абзац*/
-        padding-top: 23px;
-        width: 315px;
-        height: 125px;
-        font-size: 18px;
-        line-height: 24.5px;
-        color: #FFFFFF;
+        padding-top: 24px; /***/
+        width: 308px; /***/
+        height: 88px; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
     }
     .qrcode__left-content-text-button { /*контейнер для кнопок*/
         position: absolute;
         z-index: 11;
+        width: 100%;
 
-        padding-top: 785px;
-        padding-left: 182px;
+        padding-top: 418px; /***/
+        padding-left: 0; /***/
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        align-items: center;
 
     }
     .qrcode__left-content-text-button-app { /*контейнер App*/
 
     }
     .qrcode__left-content-text-button-google { /*контейнер googleStore*/
-        padding-left: 28px;
+        padding-left: 0;
+        padding-top: 24px;
     }
 
     .qrcode__right { /*контейнер для контента справа*/
@@ -481,28 +486,40 @@
     }
     .qrcode__right-img-ico-1 { /*картинка сткана*/
         position: absolute;
+        width: 352.44px; /***/
+        height: 297px; /***/
+        left: 63px; /***/
     }
     .qrcode__right-img-ico-2 { /*надпись nightlife*/
         position: absolute;
-        padding-left: 410px;
+        padding-left: 0;
+        width: 88.46px;
+        height: 34.62px;
+        left: 33px;
+        top: 114px;
+        transform: rotate(-12.84deg);
     }
     .qrcode__phone-middle { /*контейнер для центрального телефона*/
         position: absolute;
         z-index: 10;
-        padding-top: 220px;
-        padding-left: 638px;
+        padding-top: 802px;
+        padding-left: 0;
+        left: 12.54%;
     }
     .qrcode__phone-middle-ico { /*центральный телефон*/
-
+        width: 281px;
+        height: 563px;
     }
     .qrcode__phone-right { /*контейнер для правого телефона*/
         position: absolute;
         z-index: 10;
-        padding-top: 566px;
-        padding-left: 1051px;
+        padding-top: 1415px;
+        padding-left: 0;
+        left: 12.54%;
     }
     .qrcode__phone-right-ico { /*правый телефон*/
-
+        width: 281px;
+        height: 563px;
     }
     /*QRCODE STYLE END*/
 }
