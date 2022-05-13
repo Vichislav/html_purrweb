@@ -705,33 +705,34 @@
         line-height: 16px; /***/
     }
     .easier__text-box-3 { /*текствоыфй блок 3*/
-        margin-left: 1006px;
-        margin-top: 343px;
-        width: 122px;
-        height: 58px;
+        margin-left: 238px; /***/
+        margin-top: 343px; /***/
+        width: 122px; /***/
+        height: 58px; /***/
     }
     .easier__text-item-3-text { /*текст текстового блока 3*/
-        font-family: Roboto;
-        font-weight: 700;
-        padding-left: 23px;
-        padding-top: 19px;
-        font-size: 22.8px;
-        line-height: 26.72px;
-        color: #FFFFFF;
+        padding-left: 19px; /***/
+        padding-top: 13px; /***/
+        width: 108px; /*85*/
+        height: 32px; /***/
+        font-style: normal; /***/
+        font-weight: 700; /***/
+        font-size: 14px; /***/
+        line-height: 16px; /***/
     }
     .easier__text-box-4 { /*текствоыфй блок 4*/
-        margin-left: 509px;
-        width: 175.85px;
-        height: 65.37px;
+        margin-left: 37px; /***/
+        margin-top: -98px;
+        width: 107px; /***/
+        height: 43px; /***/
     }
     .easier__text-item-4-text { /*текст текстового блока 4*/
-        font-family: Roboto;
-        font-weight: 500;
-        padding-left: 25px;
-        padding-top: 19px;
-        font-size: 22.8px;
-        line-height: 26.72px;
-        color: #FFFFFF;
+        padding-left: 14px; /*18*/
+        padding-top: 15px; /***/
+        width: 91px; /***/
+        height: 16px; /***/
+        font-size: 14px; /***/
+        line-height: 16px; /***/
     }
     /*EASIER STYLE END*/
 }
