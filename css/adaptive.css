@@ -405,43 +405,35 @@
 
     .qrcode { /*общий контейнер секции*/
         padding-top: 0; /***/
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: flex; /***/
+        flex-direction: row; /***/
+        flex-wrap: wrap; /***/
         height: 750px; /***/
     }
 
     .qrcode__left { /*контейнер для контента слева*/
-        position: relative;
+        position: relative; /***/
         width: 100%; /***/
         height: 418px; /***/
-        z-index: 1;
         overflow: hidden; /***/
 
     }
     .qrcode__left-gradient { /*контейнер для градиента*/
-        position: absolute;
-        z-index: 3; /*покрывает картинку dj*/
         width: 416px; /***/
         height: 335px; /***/
-        background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
     }
     .qrcode__left-ico { /*картинка диджея*/
-        position: absolute;
-        z-index: 2;
         width: 416px; /***/
         height: 335px; /***/
         left: -28px; /***/
     }
     .qrcode__left-content { /*контейнер для текстово контента и кнопок слева внизу*/
-        position: absolute;
-        z-index: 4; /*покрывает градиент и картинку dj*/
         padding-top: 227px; /***/
         padding-left: 15px; /***/
         overflow: hidden; /***/
     }
     .qrcode__left-content-text { /*контейнер для текста*/
-        width: 376px;
+        width: 376px; /***/
     }
     .qrcode__left-content-text-tittle { /*заголовок*/
         width: 107px; /***/
@@ -458,68 +450,288 @@
         line-height: 22px; /***/
     }
     .qrcode__left-content-text-button { /*контейнер для кнопок*/
-        position: absolute;
-        z-index: 11;
-        width: 100%;
-
+        width: 100%; /***/
         padding-top: 418px; /***/
         padding-left: 0; /***/
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: flex; /***/
+        flex-direction: column; /***/
+        align-items: center; /***/
 
     }
     .qrcode__left-content-text-button-app { /*контейнер App*/
 
     }
     .qrcode__left-content-text-button-google { /*контейнер googleStore*/
-        padding-left: 0;
-        padding-top: 24px;
+        padding-left: 0; /***/
+        padding-top: 24px; /***/
     }
 
     .qrcode__right { /*контейнер для контента справа*/
-        position: relative;
-        width: 651px;
+        position: relative; /***/
+        width: 651px; /***/
     }
     .qrcode__right-img { /*контейнер для картинки стакана и надписи*/
 
     }
     .qrcode__right-img-ico-1 { /*картинка сткана*/
-        position: absolute;
         width: 352.44px; /***/
         height: 297px; /***/
         left: 63px; /***/
     }
     .qrcode__right-img-ico-2 { /*надпись nightlife*/
-        position: absolute;
-        padding-left: 0;
-        width: 88.46px;
-        height: 34.62px;
-        left: 33px;
-        top: 114px;
-        transform: rotate(-12.84deg);
+        padding-left: 0; /***/
+        width: 88.46px; /***/
+        height: 34.62px; /***/
+        left: 33px; /***/
+        top: 114px; /***/
+        transform: rotate(-12.84deg); /***/
     }
     .qrcode__phone-middle { /*контейнер для центрального телефона*/
-        position: absolute;
-        z-index: 10;
-        padding-top: 802px;
-        padding-left: 0;
-        left: 12.54%;
+        padding-top: 802px; /***/
+        padding-left: 0; /***/
+        left: 12.54%; /***/
     }
     .qrcode__phone-middle-ico { /*центральный телефон*/
-        width: 281px;
-        height: 563px;
+        width: 281px; /***/
+        height: 563px; /***/
     }
     .qrcode__phone-right { /*контейнер для правого телефона*/
-        position: absolute;
-        z-index: 10;
-        padding-top: 1415px;
-        padding-left: 0;
-        left: 12.54%;
+        padding-top: 1415px; /***/
+        padding-left: 0; /***/
+        left: 12.54%; /***/
     }
     .qrcode__phone-right-ico { /*правый телефон*/
-        width: 281px;
-        height: 563px;
+        width: 281px; /***/
+        height: 563px; /***/
     }
     /*QRCODE STYLE END*/
+
+    /*GENERATE STYLE START*/
+    .generate { /*общий контейнер*/
+        padding-top: 1200px; /***/
+        position: relative;
+        z-index: 1;
+        display: flex; /***/
+        flex-direction: column;
+        width: 100%; /***/
+
+    }
+    .generate__img { /*контейнер для контейнеров надписей NOTAB*/
+        padding-top: 215px; /***/
+        position: relative; /***/
+        z-index: 2;
+        order: 2; /***/
+    }
+    .generate__img-ap { /*контейнер верхней строки надписей NOTAB (1, 2)*/
+        display: flex;
+        justify-content: space-between;
+    }
+    .generate__img-ap-1 { /*верхняя левая NOTAB*/
+        height: 40.5px; /***/
+    }
+    .generate__img-ap-2 { /*верхняя правая NOTAB*/
+        height: 40.5px; /***/
+    }
+    .generate__img-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+    .generate__img-bottom-3 { /*нижняя левая NOTAB*/
+        margin-top: 41.25px; /***/
+        height: 40.5px; /***/
+    }
+    .generate__img-bottom-4 { /*нижняя правая NOTAB*/
+        margin-top: 30.38px; /***/
+        height: 40.5px; /***/
+    }
+    .generate__gradient { /*контейнер для градиента*/
+        margin-left: 0;
+        margin-top: 310px; /***/
+        position: absolute;
+        z-index: 3; /*покрывает надписи NOTAB*/
+        width: 306.4px;
+        height: 285.3px;
+        left: 9.33%;
+
+        background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+        opacity: 0.15;
+        filter: blur(93.3565px);
+        border-radius: 142.636px;
+        transform: rotate(-0.55deg);
+    }
+    .generate__phone { /*контейнер для картиник телефона*/
+        position: absolute; /***/
+        order: 3; /***/
+        z-index: 4; /*покрвает градиент*/
+        padding-top: 310px; /***/
+        padding-left: 0; /***/
+        left: 25.92%; /***/
+    }
+    .generate__phone-ico-1 { /*картинка телефона*/
+        width: 181.6px; /***/
+        height: 364.3px; /***/
+    }
+    .generate__phone-ico-2 { /*картинка стрелки*/
+       position: absolute; /***/
+        padding-left: 0; /* погдгонялось чутка figma 43.5*/
+        padding-bottom: 0; /***/
+        left: 174px; /***/
+        bottom: -36px; /***/
+        transform: rotate(35deg); /***/
+    }
+    .generate__phone-text { /*текст возле стрелки*/
+        position: absolute;
+        padding-top: 427.7px;
+        margin-left: 112px; /*если был padding то текст сжимало*/
+        width: 133px;
+        height: 22px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .generate__text { /*контейнер для текста*/
+        order: 1; /***/
+        padding-top: 143.7px; /***/
+        padding-left: 15px; /***/
+        padding-right: 0; /***/
+        display: flex;
+        align-items: start; /***/
+        flex-direction: column; /***/
+
+    }
+    .generate__text-tittle { /*заголовок*/
+        width: 295px; /***/
+        height: 29px; /***/
+        font-size: 24px; /***/
+        line-height: 29px; /***/
+    }
+    .generate__text-paragraph { /*абзац*/
+        padding-top: 24px; /***/
+        width: 292px; /***/
+        height: 44px; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
+    }
+
+    /*GENERATE STYLE END*/
+
+    /*EASIER STYLE START*/
+    .easier { /*общий контейнер*/
+        padding-top: 308px; /***/
+        position: relative;
+        z-index: 1;
+    }
+    .easier__head { /*контейнер для верхнего текста*/
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+    }
+    .easier__head-tittle { /*заголовок*/
+        width: 198px; /***/
+        height: 58px; /***/
+        font-size: 24px; /***/
+        line-height: 29px; /***/
+    }
+    .easier__head-subTittle { /*малый заголовок*/
+        padding-top: 0; /***/
+        margin-top: 24px; /***/
+        width: 324px; /***/
+        height: 22px; /***/
+        font-weight: 400; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
+    }
+    .easier__gradient { /*градиент*/
+        margin-left: 1236px;
+        position: absolute;
+        z-index: 5;
+        width: 286.92px;
+        height: 267.17px;
+        background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+        opacity: 0.4; /*figma [0.2]*/
+        filter: blur(250px);
+        transform: rotate(5.78deg);
+    }
+    .easier__phone { /*контейнер для картинки телефона */
+        padding-left: 0; /***/
+        margin-top: 145px;
+        position: absolute; /***/
+        z-index: 2; /***/
+        left: -7px; /***/
+    }
+    .easier__phone-ico { /*картинка телефона*/
+        width: 360px; /***/
+        height: 430px; /***/
+    }
+    .easier__text {  /*контейнер для текстовых блоков*/
+        position: relative;
+        z-index: 3; /*покрывает картинку телефона*/
+    }
+    .easier__text-item { /*черный бэкраунд и рамка со скруглением*/
+        background: #000000;
+        border: 0.76007px solid rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+    .easier__text-box-1 { /*текстовый блок 1*/
+        font-weight: 500;
+        margin-left: 39px;
+        margin-top: 75px;
+        width: 165px;
+        height: 57px;
+    }
+    .easier__text-item-1-text { /*текст текстового блока 1*/
+        padding-left: 15px; /***/
+        padding-top: 13px; /***/
+        width: 155px; /*[136]*/
+        height: 32px; /***/
+        font-weight: 500; /***/
+        font-size: 14px; /***/
+        line-height: 16px; /***/
+    }
+    .easier__text-box-2 { /*текстовый блок 2*/
+        margin-left: 196px; /***/
+        margin-top: 32px; /***/
+        width: 171px; /***/
+        height: 62px; /***/
+    }
+    .easier__text-item-2-text { /*текст текстового блока 2*/
+        padding-left: 18px; /***/
+        padding-top: 15px; /***/
+        width: 158px; /*[136]*/
+        height: 32px; /***/
+        font-size: 14px; /***/
+        line-height: 16px; /***/
+    }
+    .easier__text-box-3 { /*текствоыфй блок 3*/
+        margin-left: 1006px;
+        margin-top: 343px;
+        width: 122px;
+        height: 58px;
+    }
+    .easier__text-item-3-text { /*текст текстового блока 3*/
+        font-family: Roboto;
+        font-weight: 700;
+        padding-left: 23px;
+        padding-top: 19px;
+        font-size: 22.8px;
+        line-height: 26.72px;
+        color: #FFFFFF;
+    }
+    .easier__text-box-4 { /*текствоыфй блок 4*/
+        margin-left: 509px;
+        width: 175.85px;
+        height: 65.37px;
+    }
+    .easier__text-item-4-text { /*текст текстового блока 4*/
+        font-family: Roboto;
+        font-weight: 500;
+        padding-left: 25px;
+        padding-top: 19px;
+        font-size: 22.8px;
+        line-height: 26.72px;
+        color: #FFFFFF;
+    }
+    /*EASIER STYLE END*/
 }
