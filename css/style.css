@@ -76,7 +76,7 @@ body{
     font-size: 16px;
     line-height: 1.2;
     font-weight: normal;
-    background-color: gray;
+    background-color: black;
 }
 
 .wrapper {
@@ -84,7 +84,7 @@ body{
     width: 100%;
     max-width: 1440px;
     margin: auto;
-    background: #0c0c0c;
+    background-color: black;
 }
 
 /*HEADER STYLE START*/
@@ -1113,7 +1113,7 @@ body{
     line-height: 29px;
     color: #FFFFFF;
 }
-.form__button-send:hover, .form__button-send:focus, .form__button-send:active{
+.form__button-send:hover {
     background: #a29b9b;
 }
 .form__download { /*контейнер для  надписи и двух кнопок*/
@@ -1142,12 +1142,16 @@ body{
     justify-content: space-between;
 }
 .form__download-button-app { /*контейнер для кнопки app*/
-    /*width: 185px;
-    height: 60px;*/
+
+}
+.form__download-button-app-ico:hover, .form__download-button-app-ico:focus, .form__download-button-app-ico:active{
+    opacity: 0.75;
 }
 .form__download-button-google { /*контейнер для кнопки google*/
-   /* width: 185px;
-    height: 60px;*/
+
+}
+.form__download-button-google-ico:hover, .form__download-button-google-ico:focus, .form__download-button-google-ico:active{
+    opacity: 0.75;
 }
 /*FORM STYLE END*/
 
