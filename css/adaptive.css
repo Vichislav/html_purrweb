@@ -1005,7 +1005,7 @@
         transform: rotate(5.78deg);
     }
     .footer__noTab-text { /*Contact us ...*/
-        padding-top: 0px; /***/
+        padding-top: 0; /***/
         margin-top: 16px;  /***/
         width: 275px;  /***/
         height: 19px;  /***/
