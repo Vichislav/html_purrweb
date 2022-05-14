@@ -67,11 +67,11 @@
         width: 161px; /***/
         height: 323px; /***/
     }
-    .intro_imgBlock-gradient { /*градиент собственно*/
+    .intro_gradient { /*градиент собственно*/
         width: 363.95px; /***/
         height: 430.08px; /***/
-        left: -150px; /***/
-        top: 22px; /***/
+        left: 95px; /***/
+        top: 48px; /***/
         background: rgba(250, 0, 255, 0.5); /***/
         filter: blur(250px);
         transform: rotate(-90.69deg); /***/
@@ -644,13 +644,15 @@
         line-height: 22px; /***/
     }
     .easier__gradient { /*градиент*/
-        margin-left: 1236px;
+        margin-left: 0; /***/
         position: absolute;
         z-index: 5;
         width: 286.92px;
         height: 267.17px;
+        right: -46.35%; /***/
+        top: 47.73%; /*77,73*/
         background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
-        opacity: 0.4; /*figma [0.2]*/
+        opacity: 0.4; /*0,2*/
         filter: blur(250px);
         transform: rotate(5.78deg);
     }
@@ -735,4 +737,295 @@
         line-height: 16px; /***/
     }
     /*EASIER STYLE END*/
+
+    /*NOTAB STYLE START*/
+    .noTab {  /*общий контейнер секции*/
+        display: none; /***/
+    }
+    /*NOTAB STYLE END*/
+
+    /*FORM STYLE START*/
+
+    .form { /*общий контейнер*/
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form__gradient-top { /*контейнер для градиента верхнего*/
+        margin-right: 0; /***/
+        left: -19.68%; /***/
+        top: 10%; /***/
+        width: 247px; /***/
+        height: 250px; /***/
+    }
+
+    .form__headText { /*контейнер для текста сверху*/
+        margin-top: 95px;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .form__headText-tittle { /*заголовок*/
+        margin-top: 53px;
+        width: 159px;
+        height: 29px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .form__headText-subTittle { /*подзаголовок*/
+        margin-top: 23px;
+        width: 323px;
+        height: 66px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        text-align: center; /*текст по центру*/
+    }
+    .form__input { /*контейнер для импутов*/
+        margin-top: 49px;
+        width: 92%; /*из расчета что ширина импута 818 а общ ширина 1440*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form__input-label {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .inputBorderRed { /*стиль рамки инпута красного стиля*/
+        border: 1px solid red;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .inputBorderW { /*дефолтный серый стиль рамки инпута*/
+        border: 1px solid #5C5C5C;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .whiteInput { /*общие стили для оформление импутов кроме Venue City & State City */
+        margin-top: 23px;
+        background: #FFFFFF;
+
+        width: 98%;
+        padding: 1%;
+        height: 57px; /***/
+    }
+    .whiteInputCity { /*общие стили для input Venue City State City */
+        margin-top: 23px;
+        background: #FFFFFF;
+
+        height: 57px; /***/
+    }
+    ::placeholder { /*общие свойства для placeholder*/
+        font-weight: 400; /***/
+        font-size: 16px; /***/
+        line-height: 22px; /***/
+    }
+    .form__input-name { /*Name*/
+        padding-left: 11px; /***/
+    }
+    .form__input-venueName { /*Venue Name*/
+        padding-left: 11px; /***/
+    }
+
+    .form__input-duo { /*контейнер для импутов Venue City State City*/
+        padding-left: 1%;
+        padding-right: 0; /***/
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .form__input-duo-label-1 { /*Label for input Venue City*/
+        display: flex;
+        justify-content: start;
+        width: 100%; /***/
+    }
+    .form__input-duo-label-2 { /*Label for input State City*/
+        width: 100%; /***/
+        display: flex;
+        justify-content: start;  /***/
+    }
+    .form__input-venueCity { /*Venue City*/
+        width: 99%;
+        padding-left: 11px; /***/
+    }
+    .form__input-stateName { /*State City*/
+        width: 99%;
+        padding-left: 11px; /***/
+    }
+
+    .form__input-email { /*Email*/
+        padding-left: 11px; /***/
+    }
+    .form__input-subject { /*Subject*/
+        padding-left: 11px; /***/
+    }
+    .form__input-massage { /*Message*/
+        padding-left: 11px; /***/
+        padding-bottom: 100px; /*утащили текст вверх*/
+        height: 140px; /*отличие от whiteInput*/
+    }
+
+    .form__gradient-middle { /*контейнер для градиента среднего*/
+        margin-left: 0;
+        margin-top: 0;
+        left: 74.23%;
+        top: 70%;
+    }
+    .form__button { /*контейнер кнопки*/
+        margin-top: 40px; /***/
+        width: 56.8%; /*из расчета что ширина импута 818 а общ ширина 1440*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form__button-send:hover, .form__button-send:focus, .form__button-send:active{
+        background: #a29b9b;
+    }
+    .form__download { /*контейнер для  надписи и двух кнопок*/
+        padding-top: 74px;
+        width: 56.8%; /*из расчета что ширина импута 818 а общ ширина 1440*/
+        min-width: 345px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .from__download-text { /*контейнер для заголовка*/
+
+    }
+    .from__download-text-tittle { /*текст заголовка*/
+        text-transform: uppercase;
+        height: 33px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: 0.03em;
+    }
+    .form__download-button { /*контейнер для кнопок*/
+        padding-top: 45px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form__download-button-app { /*контейнер для кнопки app*/
+
+    }
+    .form__download-button-app-ico {
+        width: 185px; /***/
+        height: 60px; /***/
+    }
+    .form__download-button-google { /*контейнер для кнопки google*/
+        margin-top: 24px; /***/
+
+    }
+    .form__download-button-google-ico {
+        width: 187px; /***/
+        height: 60px; /***/
+    }
+    /*FORM STYLE END*/
+
+    /*SLIDER STYLE START*/
+    .slider__button {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-left: 10px; /***/
+        padding-right: 10px; /***/
+    }
+    .slider__gradient { /*контейнер для градиента нижнего*/
+        margin-left: 16%; /***/
+        opacity: 0.7; /***/
+
+    }
+    .slideBtn {
+        min-width: 60px;
+        height: 35px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    /*SLIDER STYLE END*/
+
+
+
+    /*FOOTER STYLE START*/
+    .footer {
+        padding: 64px 0 0 0;
+        width: 100%; /*86.11%*/
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-font {
+        font-size: 18px;
+        line-height: 24.5px;
+        color: #FFFFFF;
+    }
+    .footer__noTab {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__noTab-content { /*контейнер для контента слева*/
+       margin-top: 58px;  /***/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__gradient { /*контейнер для градиента нижнего*/
+        position: absolute;
+        z-index: 1;
+
+        width: 224px;  /***/
+        height: 227px;  /***/
+        left: -23.75%;  /***/
+        bottom: -25px;  /***/
+        background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
+        opacity: 0.6; /*0.3*/
+        filter: blur(138.347px);
+        transform: rotate(5.78deg);
+    }
+    .footer__noTab-text { /*Contact us ...*/
+        padding-top: 0px; /***/
+        margin-top: 16px;  /***/
+        width: 275px;  /***/
+        height: 19px;  /***/
+    }
+    .form__footer-noTab-copy { /*© 2020 - NoTab®*/
+        padding-top: 0;  /***/
+        margin-top: 9px;  /***/
+        margin-bottom: 24px;  /***/
+    }
+    .footer__terms { /*контейнер для контент справа*/
+
+    }
+    .footer__terms-row1 { /*Terms to use*/
+        font-weight: 800;  /***/
+        font-size: 18px;  /***/
+        line-height: 25px;  /***/
+    }
+    .footer__terms-row2 { /*Privacy policy*/
+        padding-top: 14px;  /***/
+        font-size: 18px;  /***/
+        line-height: 25px;  /***/
+    }
+    /*FOOTER STYLE END*/
 }

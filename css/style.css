@@ -176,12 +176,12 @@ body{
     position: absolute;
     z-index: 3;
 }
-.intro_imgBlock-gradient { /*градиент собственно*/
+.intro_gradient { /*градиент собственно*/
     position: absolute;
     width: 662.63px;
     height: 783.03px;
-    left: -130px;
-    top: -400px; /*получилось что сместили вверх*/
+    left: 730px;
+    top: -20px; /*получилось что сместили вверх*/
     z-index: 2;
 
     background: rgba(250, 0, 255, 0.2);
@@ -1297,6 +1297,8 @@ span:last-child {
 }
 .footer__noTab-text { /*Contact us ...*/
     padding-top: 16.18px;
+    width: 171px;
+    height: 50px;
 }
 .form__footer-noTab-copy { /*© 2020 - NoTab®*/
     padding-top: 19.15px;
