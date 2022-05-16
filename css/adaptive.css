@@ -938,32 +938,6 @@
     }
     /*FORM STYLE END*/
 
-    /*SLIDER STYLE START*/
-
-    .slider__button {
-        margin-top: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-left: 10px; /***/
-        padding-right: 10px; /***/
-    }
-    .slider__gradient { /*контейнер для градиента нижнего*/
-        margin-left: 16%; /***/
-        opacity: 0.7; /***/
-
-    }
-    .slideBtn {
-        min-width: 60px;
-        height: 35px;
-        font-size: 16px;
-        line-height: 18px;
-    }
-
-    /*SLIDER STYLE END*/
-
-
-
     /*FOOTER STYLE START*/
     .footer {
         padding: 64px 0 0 0;
