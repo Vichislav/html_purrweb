@@ -76,7 +76,7 @@ body{
     font-size: 16px;
     line-height: 1.2;
     font-weight: normal;
-    background-color: black;
+    background-color: #93b7ec;
 }
 
 .wrapper {
@@ -84,434 +84,16 @@ body{
     width: 100%;
     max-width: 1440px;
     margin: auto;
-    background-color: black;
+    background-color: #93b7ec;
 }
 
-/*HEADER STYLE START*/
-
-.header__wrapper {
-    width: 80%;
-    max-width: 1240px;
-    margin: auto; /*выставляет див с этим классом по центру в его родителе*/
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
-    background-color: black;
-}
-.header__cube { /*синий кубик*/
-}
-.header__cube-svg:hover, .header__cube-svg:focus, .header__cube-svg:active{
-    opacity: 0.75;
-}
-.header__noTab { /*div для надписи NoTab*/
-    padding-left: 8px;
-}
-
-.header__noTab-text:hover, .header__noTab-text:focus, .header__noTab-text:active{
-    opacity: 0.75;
-}
-
-.header__nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 108px;
-}
-.header__nav-item-text {
-    padding-left: 12px;
-}
-
-.header__nav-item-link {
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid #FFFFFF;
-}
-.header__nav-item-link:hover, .header__nav-item-link:focus, .header__nav-item-link:active{
-    opacity: 0.75;
-}
-/*HEADER STYLE END*/
-
-/*INTRO STYLE START*/
-
-.intro {
-    overflow: hidden;
-}
-.intro__wrapper { /*почти тоже самое, что и в классе header__wrapper надо будет объединить*/
-    width: 80%;
-    max-width: 1240px;
-    margin: auto; /*выставляет див с этим классом по центру в его родителе*/
-    display: flex;
-    flex-direction: column; /*ОТЛИЧИЕ от  header__wrapper */
-    justify-content: flex-start;
-    flex-wrap: wrap; /*дарует возможность переноса по строкам контента*/
-    background-color: black;
-}
-.intro__wrapper-1 {
-    display: flex;
-    flex-direction: row;
-}
-.intro__textBlock {
-    min-height: 700px;
-
-}
-.intro__textBlock-item-1 {
-    padding-top: 154px;
-    /*min-width: 643px;*/
-}
-.intro__textBlock-item-1-text {
-    font-family: Montserrat;
-    font-size: 64px;
-    line-height: 70px;
-    font-weight: 700;
-    color: #FFFFFF;
-}
-
-.intro__imgBlock { /*контейнер для градиента и картики айфона*/
-    position: relative;
-    padding-left: 50px; /*погонядлось в figma 180*/
-}
-.intro__imgBlock-ico {  /*сама картинка айфона*/
-    position: absolute;
-    z-index: 3;
-}
-.intro_gradient { /*градиент собственно*/
-    position: absolute;
-    width: 662.63px;
-    height: 783.03px;
-    left: 730px;
-    top: -20px; /*получилось что сместили вверх*/
-    z-index: 2;
-
-    background: rgba(250, 0, 255, 0.2);
-    filter: blur(250px);
-    transform: rotate(-105.26deg);
-}
-.intro__textBlock-item-2 {
-    position: relative;
-    z-index: 1;
-    padding-top: 55px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-.intro__textBlock-item-2-gradient { /*контейнер для градиента*/
-    position: absolute;
-    z-index: 2;
-    height: 125px;
-    width: 125px;
-    background: rgba(96, 92, 234, 0.5); /*еле видно это ...*/
-    filter: blur(100px);
-}
-.intro__textBlock-item-2-img { /*контейнер картинки-линии*/
-    position: relative;
-    z-index: 3;
-    height: 125px; /*чет не то*/
-    width: 125px;  /*чет я забыл*/
-}
-.intro__textBlock-item-2-text {
-    position: relative;
-    z-index: 3;
-    font-size: 20px;
-    line-height: 27px;
-    color: #FFFFFF;
-    width: 380px;
-    height: 81px;
-}
-.intro__footer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.intro__footer-item-1 {
-    min-width: 413px;
-}
-.intro__footer-item-1-text {
-    font-family: Montserrat;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 35px;
-    line-height: 70px;
-    color: #FFFFFF;
-}
-.intro__footer-item-2 {
-   padding-left: 260px; /*подгонялось в figma 388*/
-}
-.intro__footer-item-2-ico:hover, .intro__footer-item-2-ico:focus, .intro__footer-item-2-ico:active{
-    opacity: 0.5;
-}
-
-.intro__footer-item-3 {
-    padding-left: 28px;
-}
-.intro__footer-item-3-ico:hover, .intro__footer-item-3-ico:focus, .intro__footer-item-3-ico:active{
-    opacity: 0.5;
-}
-/*INTRO STYLE END*/
-
-/*COOKIE STYLE START*/
-
-.cookie {
-    width: 100%;
-    max-width: 1440px;
-    min-height: 93px;
-    background: #212834;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cookie__item-1 {
-    padding-left: 100px;
-}
-.cookie__item-text {
-    font-size: 14px;
-    line-height: 19px;
-    color: #FFFFFF;
-}
-
-.cookie__item-2 {
-    padding-right: 24px;
-}
-
-.cookie__item-button {
-    text-transform: uppercase; /*все буквы заглавные*/
-    font-size: 14px;
-    line-height: 19px;
-    width: 132px;
-    height: 50px;
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
-    border: 0.5px solid #FFFFFF;
-    border-radius: 6px;
-}
-.cookie__item-button:hover, .cookie__item-button:focus, .cookie__item-button:active{
-    background: #a29b9b;
-}
-/*COOKIE STYLE END*/
-
-/*INFO__WINDOWS STYLE START*/
-.info__windows {
-    padding-top: 61px;
-    width: 80%;
-    max-width: 1240px;
-    margin: auto; /*выставляет див с этим классом по центру в его родителе*/
-
-    padding-left: 56px;   /*подгонялось в figma 76*/
-    padding-right: 55px;  /*подгонялось в figma 75*/
-}
-.info__windows-wrap {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-}
-.info__window-wrap-border-1, .info__window-wrap-border-2 {
-    width: 503px;
-    height: 312px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    box-sizing: border-box;
-    border-radius: 21.3671px;
-
-    padding-left: 55px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-}
-.info__window-mail {
-    height: 186px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.info__windows-login {
-    height: 122px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.info__windows-text {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 41px;
-    color: #FFFFFF;
-}
-.info__windows-link {
-    font-size: 24px;
-    line-height: 33px;
-    color: #FFFFFF;
-}
-
-/*INFO__WINDOWS STYLE END*/
-
-/*MISSION STYLE START*/
-.mission {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.mission__img { /*контейнер картинки*/
-    height: 1027px;
-    width: 751px;
-    overflow: hidden;
-}
-.mission__img-ico { /*сама картинка*/
-    top: -60px;
-    position: relative;
-    width: 498px;
-    height: 999px;
-    transform: rotate(90deg);
-}
-.mission__text { /*первый контейнер текста*/
-    max-width: 358px;
-    margin-left: 167px;
-
-}
-.mission__text-container { /*второй контейнер текста*/
-    position: relative;
-    z-index: 0;
-}
-.mission__text-gradient {
-    position: absolute;
-    z-index: 1;
-    width: 85px;
-    height: 85px;
-    left: 197px;
-    top: 177px;
-    background: #F101BF;
-    opacity: 0.9; /*измененно а то не видать [0.8]*/
-    filter: blur(64px); /*измененно а то не видать [100]*/
-
-}
-.mission__text-title { /*заголовок*/
-    position: relative;
-    z-index: 2;
-    padding-top: 180px; /*подгонялос в было figma 236*/
-    font-family: Montserrat;
-    font-weight: 700;
-    font-size: 51px;
-    line-height: 62px;
-    color: #FFFFFF;
-}
-.mission__text-content { /*основный текст*/
-    max-width: 315px;
-    padding-top: 23px;
-    font-size: 18px;
-    line-height: 24.5px;
-    color: #FFFFFF;
-}
-/*MISSION STYLE END*/
-
-/*IDScanner STYLE START*/
-
-.IDScanner { /*общий контейнер*/
-    position: relative;
-    z-index: 1; /*слой IDScanner*/
-    width: 1440px;
-    height: 1134px;
-}
-
-.IDScanner__img { /*контенер для гардиента и картинки бармена*/
-    position: absolute;
-    z-index: 2;  /*слой IDScanner__img & IDScanner*/
-
-}
-.IDScanner__img-gradient {  /*контенер для градиента*/
-    position: absolute;
-    z-index: 4; /*слой IDScanner__img*/
-    width: 1440px;
-    height: 836px;
-    background: linear-gradient(179.83deg, #000000 -3.1%, rgba(0, 0, 0, 0) 56.76%, #000000 83.92%);
-}
-.IDScanner__img-ico { /*картинка бармена*/
-    position: relative;
-    z-index: 3; /*слой IDScanner__img*/
-    width: 100%; /*было 1440px*/
-    height: 836px;
-    opacity: 0.5;
-}
-.IDScanner__content { /*контенер для двух телефонов и текста*/
-    padding-top: 467px;
-    position: absolute;
-    z-index: 3; /*слой IDScanner (поверх всех по идее)*/
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.IDScanner__content-img-1 { /*контенер 1 телефона*/
-    padding-left: 100px;
-}
-.IDScanner__content-img-1-ico { /*1 телефон (левый)*/
-
-}
-.IDScanner__content-img-2 { /*контенер 2 телефона*/
-    padding-left: 49.5px;
-}
-.IDScanner__content-img-2-ico { /*2 телефон (правый)*/
-
-}
-.IDScanner__content-text { /*контейнер для текстовых блоков*/
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-left: 128.44px;
-    padding-top: 387px; /*похоже надо будет подгонять*/
-}
-.IDScanner__content-text-tittle { /*титул*/
-
-    width: 400px;
-    height: 62px;
-    font-family: Montserrat;
-    font-weight: 700;
-    font-size: 51px;
-    line-height: 62px;
-    color: #FFFFFF;
-}
-.IDScanner__content-text-paragraph { /*абзац*/
-    padding-top: 23px;
-    width: 316px;
-    height: 125px;
-    font-size: 18px;
-    line-height: 24.5px;
-    color: #FFFFFF;
-}
-/*IDScanner STYLE END*/
-
-/*TOOL STYLE START*/
-.tool { /*общий*/
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 730px;
-}
 /*SLIDER STYLE START*/
 
 .slider { /*общий контейнер*/
     margin-top: 100px;
-    background-color: black;
+    background-color: white;
     position: relative;
     z-index: 0;
-}
-.slider__gradient { /*контейнер для градиента нижнего*/
-    position: absolute;
-    z-index: 1;
-    margin-left: 42%;
-    width: 256px;
-    height: 256px;
-
-    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
-    opacity: 0.8;
-    filter: blur(50px);
 }
 .slider__wrapper { /**/
     width: 256px;
@@ -520,28 +102,20 @@ body{
     overflow: hidden;
     position: relative;
     z-index: 2;
+    background-color: #93b7ec;
 }
 .slider__wrapper-line { /**/
     width: 1024px;
     height: 256px;
-    background-color: black;
+    background-color: white;
     display: flex;
     position: relative;
     z-index: 0;
 }
-.slider__wrapper-gradient { /*контейнер для градиента нижнего*/
-    position: absolute;
-    z-index: 1;
-    width: 256px;
-    height: 256px;
-
-    background: linear-gradient(12.08deg, #F101BF 2.82%, #0066FF 97.06%);
-    opacity: 0.8;
-    filter: blur(60px);
-}
 .slide {
     position: absolute;
     z-index: 2;
+    background-color: white;
     display: none;
 }
 .slider__button {
@@ -554,8 +128,8 @@ body{
 .slideBtn {
     min-width: 240px;
     height: 60px;
-    background: #000000;
-    border: 1px solid #FFFFFF;
+    background-color: white;
+    border: 1px solid grey;
     box-sizing: border-box;
     border-radius: 10px;
 
@@ -564,7 +138,7 @@ body{
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    color: #FFFFFF;
+    color: grey;
 }
 
 .slideBtn:hover {
