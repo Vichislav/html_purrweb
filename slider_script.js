@@ -6,10 +6,11 @@ const slides = document.querySelectorAll('.slide') /*псевдомассив э
 const dots = document.querySelectorAll('.dot') /*псевдомассив элементов с классом dot*/
 
 let index = 0; /*номер картинки в коллекеции*/
-const sliderLine = document.querySelector('.slider__wrapper-line'); /*блок с картинками*/
+const sliderLine = document.querySelector('.slider__wrapper-container-line'); /*блок с картинками*/
 let ofLeft = 0; /* конечная точка смещение блока от левого края*/
 let currentPosition = 0; /*величина приращения*/
 let startMove = true; /*true можно начать выполнять функцию, false - нельзя*/
+let slidesSize = 700; /*размер контейнера слайда*/
 console.log(ofLeft);
 console.log(slides.length);
 let timer;
@@ -21,9 +22,9 @@ let timerDots;
 /*нулевой видно остальные справа*/
 slides.forEach((itemSlide, indexSlide) => {
    if (indexSlide !== 0) {
-       itemSlide.style.left = 256 + 'px';
+       itemSlide.style.left = slidesSize + 'px'; /*256 + px*/
    } else {
-       itemSlide.style.left = 0 + 'px';
+       itemSlide.style.left = 0 + 'px';  /*0+ px*/
    }
 })
 
@@ -34,13 +35,13 @@ function moveLeft() { /*функция контролер для прокрут�
            startMove = false;
            currentPosition = 0;
            index = 0;
-           timerLast = setInterval(lastLeft, 5);
+           timerLast = setInterval(lastLeft, 3);
 
        } else {
            /*точка входа*/
            startMove = false;
            currentPosition = 0;
-           timer = setInterval(left, 5);
+           timer = setInterval(left, 3);
        }
    }
 }
@@ -52,19 +53,19 @@ function moveRight() { /*функция контролер для прокрут
             startMove = false;
             currentPosition = 0;
             index = slides.length - 1;
-            timerLast = setInterval(lastRight, 5);
+            timerLast = setInterval(lastRight, 3);
 
         } else {
             /*точка входа*/
             startMove = false;
             currentPosition = 0;
-            timer = setInterval(right, 5);
+            timer = setInterval(right, 3);
         }
     }
 }
 
 function lastLeft() { /*смещение последнего слайда с перемещением первого на его место*/
-    ofLeft = 256; /*сохраняем минимальное смещение в 256 px*/
+    ofLeft = slidesSize; /*сохраняем минимальное смещение в 256 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         clearInterval(timerLast);
@@ -79,7 +80,7 @@ function lastLeft() { /*смещение последнего слайда с п
 }
 
 function lastRight() { /*смещение первого слайда с перемещением последнего на его место*/
-    ofLeft = 256; /*сохраняем минимальное смещение в 256 px*/
+    ofLeft = slidesSize; /*сохраняем минимальное смещение в 256 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         clearInterval(timerLast);
@@ -94,7 +95,7 @@ function lastRight() { /*смещение первого слайда с пер�
 }
 
 function left() { /*функция смещения двух слайдов влево*/
-    ofLeft = 256;
+    ofLeft = slidesSize;
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         index++;
@@ -110,7 +111,7 @@ function left() { /*функция смещения двух слайдов вл
 }
 
 function right() { /*функция смещения двух слайдов вправо*/
-    ofLeft = 256;
+    ofLeft = slidesSize;
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         index--;
@@ -127,13 +128,13 @@ function right() { /*функция смещения двух слайдов в�
 
 function incrementLeft(firstInd, secondInd) { /*функция смещения на 1 px двух слайдов влево*/
     currentPosition++;
-    slides[firstInd].style.left = (ofLeft-256) - currentPosition + 'px'; /*движение текущего (кто уйдет)*/
+    slides[firstInd].style.left = (ofLeft-slidesSize) - currentPosition + 'px'; /*движение текущего (кто уйдет)*/
     slides[secondInd].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа (кто останется)*/
 }
 
 function incrementRight(firstInd, secondInd) { /*функция смещения на 1 px двух слайдов вправо*/
     currentPosition++;
-    slides[firstInd].style.left = (ofLeft-256) + currentPosition + 'px'; /*движение текущего (кто уйдет)*/
+    slides[firstInd].style.left = (ofLeft-slidesSize) + currentPosition + 'px'; /*движение текущего (кто уйдет)*/
     slides[secondInd].style.left = -ofLeft + currentPosition + 'px'; /*движение предыдущего, слева (кто останется)*/
 }
 
@@ -152,10 +153,10 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
         slides.forEach((itemS, indexS) =>{ /*пробижались по массиву слайдов*/
             /*раскидываем незатребованные слайды по бокам*/
             if (indexS < indexDot) { /*если слайд находится слева от активируемой точки*/
-                slides[indexS].style.left = -256 + 'px'; /*смещаем до конца влево от экрана слайдера*/
+                slides[indexS].style.left = -slidesSize + 'px'; /*смещаем до конца влево от экрана слайдера*/
             }
             if (indexS > indexDot) { /*если слайд находится справа от активируемой точки*/
-                slides[indexS].style.left = +256 + 'px'; /*смещаем вправо от экрана слайдера*/
+                slides[indexS].style.left = +slidesSize + 'px'; /*смещаем вправо от экрана слайдера*/
             }
             if (indexS === indexDot) { /*если слайд соответствует активной точке*/
                 slides[indexS].style.left = 0 + 'px'; /*оставляем его на экране*/
