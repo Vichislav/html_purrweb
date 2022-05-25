@@ -18,6 +18,27 @@ let timerLast;
 let timerDot;
 let timerDots;
 
+
+/*функция расстановки сладов по контейнеру*/
+/*function setupSlides(indSl) {
+
+    slides.forEach((itemSlide, indexSlide) => {
+        if (indexSlide === indSl) {
+            itemSlide.style.left = 0 + 'px'; /!*видимый слайд*!/
+        }
+        if (indexSlide > indSl) {
+            for (; indexSlide <= slides.length - 1; indexSlide++) {
+                itemSlide[indexSlide].style.left = itemSlide[indexSlide - 1].style.left + 700 + 'px'; /!*слайды уходящие врпаво*!/
+            }
+        }
+        if (indexSlide < indSl) {
+            for (; indexSlide >= 0; indexSlide--) {
+                itemSlide[indexSlide].style.left = itemSlide[indexSlide + 1].style.left - 700 + 'px'; /!*слайды уходящие влево*!/
+            }
+        }
+    })
+}*/
+/*setupSlides(0);*/
 /*расставляем слайды в изначальные позиции*/
 /*нулевой видно остальные справа*/
 slides.forEach((itemSlide, indexSlide) => {
@@ -148,25 +169,27 @@ function activeDot(n) { /*функция для выделения текуще�
 }
 
 
-
-function moveDotRight(ind, startPoint, endPoint) {
-
+function moveDotRight(ind, startPoint, endPoint, increment) {
+    console.log(' я внутри moveDotRight slides[ind].style.left = ' + slides[ind].style.left + ' increment = ' + increment);
     let timerDotRight = setInterval(() => {
 
-        if (startPoint === endPoint) {  /*останавливаем движение*/
-            ind--;
-            startPoint = 0;
+        if (increment >= endPoint) {  /*останавливаем движение*/
+            /*ind--;*/
+            /*startPoint = 0;*/
             clearInterval(timerDotRight);
             access = true;
             index = ind;
-            currentPosition = startPoint;
+            currentPosition = startPoint; /*нужно ли*/
             /*точка выхода*/
         }
         else {
-            startPoint++;
-            slides[ind].style.left = (endPoint - slidesSize) + startPoint + 'px'; /*движение текущего (кто уйдет)*/
-            slides[ind - 1].style.left = -endPoint + startPoint + 'px'; /*движение предыдущего, слева (кто останется)*/
-            activeDot(ind - 1)
+            increment++;
+            slides[ind].style.left = startPoint + increment + 'px';
+            console.log( 'ind = ' + ind + ' slides[ind].style.left = ' + slides[ind].style.left + ' endPoint = ' + endPoint + ' startPoint = ' + startPoint);
+            console.log(' increment = ' + increment);
+            /*slides[ind].style.left = (endPoint - slidesSize) + startPoint + 'px';*/ /*движение текущего (кто уйдет)*/
+           /* slides[ind - 1].style.left = -endPoint + startPoint + 'px';*/ /*движение предыдущего, слева (кто останется)*/
+
         }
 
     }, 2);
@@ -175,40 +198,29 @@ function moveDotRight(ind, startPoint, endPoint) {
 
 dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву точек и всем разадли по ивенту*/
     itemD.addEventListener('click', () => {
-          console.log('я снаружи indexDot = ' + indexDot + 'index = ' + index);
+          console.log('я снаружи indexDot = ' + indexDot + ' index = ' + index);
         if (index > indexDot) { /*если слайд находится слева от активируемой точки*/
-            let iterCounter = index - indexDot + 1;
+            let iterCounter = index - indexDot ; /*посчитали требуемое количество итераций*/
             console.log(' я внутри if iterCounter = ' + iterCounter);
-            for (; index > indexDot ; index--) {
+
+            moveDotRight(index, 0, 700, 0)
+            index--;
+            for (; index >= indexDot ; index--) {
                 console.log(' я внутри for index = ' + index);
 
-                if (index > indexDot)
-                    console.log(' я внутри первого if index = ' + index + ' indexDot = ' + indexDot);
-                    moveDotRight(index, (-2 + index) * 700, 700) /*смещаем вправо 1 слайд*/
-                console.log(' startPoint = ' + (-2 + index) * 700 );
-
-                if (index === indexDot)
-                    console.log(' я внутри ВТОРОГО if index = ' + index + ' indexDot = ' + indexDot);
-                    moveDotRight(index, (-2 + index) * 700, 0)
+                if (index === indexDot) {
+                    console.log(' я внутри ПЕРОВОГО if index = ' + index + ' indexDot = ' + indexDot + 'startPoint = ' + (-iterCounter + index) * 700);
+                    moveDotRight(index, (-iterCounter + index) * 700, 0, 0) /*сравнивая increment и endPoint  сравниваем 0 с 0*/
+                } else {
+                    moveDotRight(index, (-iterCounter + index) * 700, 700, 0)
+                }
             }
+            index = indexDot;
+            console.log(' я ПЕРЕД  activeDot index = ' + index);
+            activeDot(index);
         }
-
-      /*  slides.forEach((itemS, indexS) =>{ /!*пробижались по массиву слайдов*!/
-            /!*раскидываем незатребованные слайды по бокам*!/
-            if (indexS < indexDot) { /!*если слайд находится слева от активируемой точки*!/
-                slides[indexS].style.left = -slidesSize + 'px'; /!*смещаем до конца влево от экрана слайдера*!/
-            }
-            if (indexS > indexDot) { /!*если слайд находится справа от активируемой точки*!/
-                slides[indexS].style.left = +slidesSize + 'px'; /!*смещаем вправо от экрана слайдера*!/
-            }
-            if (indexS === indexDot) { /!*если слайд соответствует активной точке*!/
-                slides[indexS].style.left = 0 + 'px'; /!*оставляем его на экране*!/
-            }
-        })*/
-
-        /*indexDot = index;*/
         console.log(' я вышел из if index = ' + index);
-        activeDot(index);
+
     })
 })
 
