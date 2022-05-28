@@ -11,41 +11,20 @@ let ofLeft = 0; /* конечная точка смещение блока от 
 let currentPosition = 0; /*величина приращения*/
 let access = true; /*true можно начать выполнять функцию, false - нельзя*/
 let slidesSize = 700; /*размер контейнера слайда*/
-console.log(ofLeft);
-console.log(slides.length);
+
 let timer;
 let timerLast;
 let timerDot;
 let timerDots;
 
 
-/*функция расстановки сладов по контейнеру*/
-/*function setupSlides(indSl) {
-
-    slides.forEach((itemSlide, indexSlide) => {
-        if (indexSlide === indSl) {
-            itemSlide.style.left = 0 + 'px'; /!*видимый слайд*!/
-        }
-        if (indexSlide > indSl) {
-            for (; indexSlide <= slides.length - 1; indexSlide++) {
-                itemSlide[indexSlide].style.left = itemSlide[indexSlide - 1].style.left + 700 + 'px'; /!*слайды уходящие врпаво*!/
-            }
-        }
-        if (indexSlide < indSl) {
-            for (; indexSlide >= 0; indexSlide--) {
-                itemSlide[indexSlide].style.left = itemSlide[indexSlide + 1].style.left - 700 + 'px'; /!*слайды уходящие влево*!/
-            }
-        }
-    })
-}*/
-/*setupSlides(0);*/
 /*расставляем слайды в изначальные позиции*/
 /*нулевой видно остальные справа*/
 slides.forEach((itemSlide, indexSlide) => {
    if (indexSlide !== 0) {
-       itemSlide.style.left = slidesSize + 'px'; /*256 + px*/
+       itemSlide.style.left = slidesSize + 'px';
    } else {
-       itemSlide.style.left = 0 + 'px';  /*0+ px*/
+       itemSlide.style.left = 0 + 'px';
    }
 })
 
@@ -81,13 +60,13 @@ function moveRight() { /*функция контролер для прокрут
             /*точка входа*/
             access = false;
             currentPosition = 0;
-            timer = setInterval(right, 3, index);
+            timer = setInterval(right, 3);
         }
     }
 }
 
 function lastLeft() { /*смещение последнего слайда с перемещением первого на его место*/
-    ofLeft = slidesSize; /*сохраняем минимальное смещение в 256 px*/
+    ofLeft = slidesSize; /*сохраняем минимальное смещение в 700 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         clearInterval(timerLast);
@@ -102,7 +81,7 @@ function lastLeft() { /*смещение последнего слайда с п
 }
 
 function lastRight() { /*смещение первого слайда с перемещением последнего на его место*/
-    ofLeft = slidesSize; /*сохраняем минимальное смещение в 256 px*/
+    ofLeft = slidesSize; /*сохраняем минимальное смещение в 700 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         clearInterval(timerLast);
@@ -132,20 +111,19 @@ function left() { /*функция смещения двух слайдов вл
     }
 }
 
-function right(ind) { /*функция смещения двух слайдов вправо*/
+function right() { /*функция смещения двух слайдов вправо*/
     ofLeft = slidesSize;
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        ind--;
+        index--;
         currentPosition = 0;
         clearInterval(timer);
         access = true;
-        index = ind;
         /*точка выхода*/
     }
     else {
-        incrementRight(ind, ind - 1);
-        activeDot(ind - 1);
+        incrementLeft(index, index - 1);
+        activeDot(index - 1);
     }
 }
 
@@ -207,18 +185,16 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
 
         /*если слайд находится СПРАВА от активируемой точки*/
         if (index > indexDot) {
-            console.log('index > indexDot от 4 к 0')
-            let iterCounter = index - indexDot ; /*посчитали требуемое количество итераций а надо ли?*/
             let counter = 0
-            moveDotRight(index, 0, 700, 0, indexDot)
+            moveDotRight(index, 0, slidesSize, 0, indexDot)
             index--;
             for (; index >= indexDot ; index--) {
                 if (index === indexDot) {
                     counter++;
-                    moveDotRight(index, -counter * 700, 0, 0)
+                    moveDotRight(index, -counter * slidesSize, 0, 0)
                 } else {
                     counter++;
-                    moveDotRight(index, -counter * 700, 700, 0)
+                    moveDotRight(index, -counter * slidesSize, slidesSize, 0)
                 }
             }
             index = indexDot;
@@ -227,19 +203,16 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
 
         /*если слайд находится СЛЕВА от активируемой точки*/
         if (index < indexDot) {
-            console.log('index < indexDot от 0 к 4')
-            let iterCounter = index - indexDot; /*посчитали требуемое количество итераций*/
             let counter = 0
-            moveDotLeft(index, 0, -700, 0)
+            moveDotLeft(index, 0, -slidesSize, 0)
             index++;
             for (; index <= indexDot ; index++) {
                 if (index === indexDot) {
-                    console.log('iterCounter = ' + iterCounter)
                     counter++;
-                    moveDotLeft(index, counter * 700, 0, 0) /*сравнивая increment и endPoint  сравниваем 0 с 0*/
+                    moveDotLeft(index, counter * slidesSize, 0, 0) /*сравнивая increment и endPoint  сравниваем 0 с 0*/
                 } else {
                     counter++;
-                    moveDotLeft(index, counter * 700, -700, 0)
+                    moveDotLeft(index, counter * slidesSize, -slidesSize, 0)
                 }
             }
             index = indexDot;
@@ -249,8 +222,8 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
 })
 
 
-document.querySelector(`.slider__button-left`).addEventListener('click', moveLeft);
-document.querySelector(`.slider__button-right`).addEventListener('click', moveRight);
+document.querySelector(`.slider__button-left`).addEventListener('click', moveRight);
+document.querySelector(`.slider__button-right`).addEventListener('click', moveLeft);
 
 
 
