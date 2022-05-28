@@ -170,7 +170,6 @@ function activeDot(n) { /*функция для выделения текуще�
 
 
 function moveDotRight(ind, startPoint, endPoint, increment) {
-    console.log(' я внутри moveDotRight slides[ind].style.left = ' + slides[ind].style.left + ' increment = ' + increment);
     let timerDotRight = setInterval(() => {
             let slidesWay = Math.abs(startPoint) + Math.abs(endPoint);
             if (increment >= slidesWay) {  /*останавливаем движение*/
@@ -183,29 +182,69 @@ function moveDotRight(ind, startPoint, endPoint, increment) {
                 increment++;
                 slides[ind].style.left = startPoint + increment + 'px';
             }
-    }, 1);
+    }, 0.25);
+}
 
+function moveDotLeft(ind, startPoint, endPoint, increment) {
+
+    let timerDotLeft = setInterval(() => {
+        let slidesWay = Math.abs(startPoint) + Math.abs(endPoint);
+        if (increment >= slidesWay) {  /*останавливаем движение*/
+            clearInterval(timerDotLeft);
+            access = true;
+            index = ind;
+            /*точка выхода*/
+        }
+        else {
+            increment++;
+            slides[ind].style.left = startPoint - increment + 'px';
+        }
+    }, 0.25);
 }
 
 dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву точек и всем разадли по ивенту*/
     itemD.addEventListener('click', () => {
 
-        /*если слайд находится СЛЕВА от активируемой точки*/
+        /*если слайд находится СПРАВА от активируемой точки*/
         if (index > indexDot) {
-            let iterCounter = index - indexDot ; /*посчитали требуемое количество итераций*/
-            moveDotRight(index, 0, 700, 0)
+            console.log('index > indexDot от 4 к 0')
+            let iterCounter = index - indexDot ; /*посчитали требуемое количество итераций а надо ли?*/
+            let counter = 0
+            moveDotRight(index, 0, 700, 0, indexDot)
             index--;
             for (; index >= indexDot ; index--) {
                 if (index === indexDot) {
-                    moveDotRight(index, (-iterCounter + index) * 700, 0, 0) /*сравнивая increment и endPoint  сравниваем 0 с 0*/
+                    counter++;
+                    moveDotRight(index, -counter * 700, 0, 0)
                 } else {
-                    moveDotRight(index, (-iterCounter + index) * 700, 700, 0)
+                    counter++;
+                    moveDotRight(index, -counter * 700, 700, 0)
                 }
             }
             index = indexDot;
             activeDot(index);
         }
 
+        /*если слайд находится СЛЕВА от активируемой точки*/
+        if (index < indexDot) {
+            console.log('index < indexDot от 0 к 4')
+            let iterCounter = index - indexDot; /*посчитали требуемое количество итераций*/
+            let counter = 0
+            moveDotLeft(index, 0, -700, 0)
+            index++;
+            for (; index <= indexDot ; index++) {
+                if (index === indexDot) {
+                    console.log('iterCounter = ' + iterCounter)
+                    counter++;
+                    moveDotLeft(index, counter * 700, 0, 0) /*сравнивая increment и endPoint  сравниваем 0 с 0*/
+                } else {
+                    counter++;
+                    moveDotLeft(index, counter * 700, -700, 0)
+                }
+            }
+            index = indexDot;
+            activeDot(index);
+        }
     })
 })
 
