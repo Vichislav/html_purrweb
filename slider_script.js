@@ -128,13 +128,13 @@ function right() { /*функция смещения двух слайдов в�
 }
 
 function incrementLeft(firstInd, secondInd) { /*функция смещения на 1 px двух слайдов влево*/
-    currentPosition++;
+    currentPosition = currentPosition + 5;
     slides[firstInd].style.left = (ofLeft - slidesSize) - currentPosition + 'px'; /*движение текущего (кто уйдет)*/
     slides[secondInd].style.left = ofLeft - currentPosition + 'px'; /*движение след. справа (кто останется)*/
 }
 
 function incrementRight(firstInd, secondInd) { /*функция смещения на 1 px двух слайдов вправо*/
-    currentPosition++;
+    currentPosition = currentPosition + 5;
     slides[firstInd].style.left = (ofLeft - slidesSize) + currentPosition + 'px'; /*движение текущего (кто уйдет)*/
     slides[secondInd].style.left = -ofLeft + currentPosition + 'px'; /*движение предыдущего, слева (кто останется)*/
 }
@@ -157,7 +157,7 @@ function moveDotRight(ind, startPoint, endPoint, increment) {
                 /*точка выхода*/
             }
             else {
-                increment = increment + 5;
+                increment = increment + 10;
                 slides[ind].style.left = startPoint + increment + 'px';
             }
     }, 1);
@@ -174,7 +174,7 @@ function moveDotLeft(ind, startPoint, endPoint, increment) {
             /*точка выхода*/
         }
         else {
-            increment = increment + 5;
+            increment = increment + 10;
             slides[ind].style.left = startPoint - increment + 'px';
         }
     }, 1);
