@@ -12,10 +12,10 @@ let currentPosition = 0; /*величина приращения*/
 let access = true; /*true можно начать выполнять функцию, false - нельзя*/
 let slidesSize = 700; /*размер контейнера слайда*/
 
-let timer;
-let timerLast;
-let timerDot;
-let timerDots;
+let timerRight;
+let timerLeft;
+let timerLastRight;
+let timerLastLeft;
 
 
 /*расставляем слайды в изначальные позиции*/
@@ -36,13 +36,13 @@ function moveLeft() { /*функция контролер для прокрут�
            access = false;
            currentPosition = 0;
            index = 0;
-           timerLast = setInterval(lastLeft, 3);
+           timerLastLeft = setInterval(lastLeft, 3);
 
        } else {
            /*точка входа*/
            access = false;
            currentPosition = 0;
-           timer = setInterval(left, 3);
+           timerLeft = setInterval(left, 3);
        }
    }
 }
@@ -54,13 +54,13 @@ function moveRight() { /*функция контролер для прокрут
             access = false;
             currentPosition = 0;
             index = slides.length - 1;
-            timerLast = setInterval(lastRight, 3);
+            timerLastRight = setInterval(lastRight, 3);
 
         } else {
             /*точка входа*/
             access = false;
             currentPosition = 0;
-            timer = setInterval(right, 3);
+            timerRight = setInterval(right, 3);
         }
     }
 }
@@ -69,7 +69,7 @@ function lastLeft() { /*смещение последнего слайда с п
     ofLeft = slidesSize; /*сохраняем минимальное смещение в 700 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        clearInterval(timerLast);
+        clearInterval(timerLastLeft);
         access = true;
         index = 0;
         /*точка выхода*/
@@ -84,7 +84,7 @@ function lastRight() { /*смещение первого слайда с пер�
     ofLeft = slidesSize; /*сохраняем минимальное смещение в 700 px*/
 
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
-        clearInterval(timerLast);
+        clearInterval(timerLastRight);
         access = true;
         index = slides.length - 1;
         /*точка выхода*/
@@ -101,7 +101,7 @@ function left() { /*функция смещения двух слайдов вл
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         index++;
         currentPosition = 0;
-        clearInterval(timer);
+        clearInterval(timerLeft);
         access = true;
         /*точка выхода*/
     }
@@ -117,12 +117,12 @@ function right() { /*функция смещения двух слайдов в�
     if (currentPosition == ofLeft) {  /*останавливаем движение*/
         index--;
         currentPosition = 0;
-        clearInterval(timer);
+        clearInterval(timerRight);
         access = true;
         /*точка выхода*/
     }
     else {
-        incrementLeft(index, index - 1);
+        incrementRight(index, index - 1);
         activeDot(index - 1);
     }
 }
@@ -157,10 +157,10 @@ function moveDotRight(ind, startPoint, endPoint, increment) {
                 /*точка выхода*/
             }
             else {
-                increment++;
+                increment = increment + 5;
                 slides[ind].style.left = startPoint + increment + 'px';
             }
-    }, 0.25);
+    }, 1);
 }
 
 function moveDotLeft(ind, startPoint, endPoint, increment) {
@@ -174,10 +174,10 @@ function moveDotLeft(ind, startPoint, endPoint, increment) {
             /*точка выхода*/
         }
         else {
-            increment++;
+            increment = increment + 5;
             slides[ind].style.left = startPoint - increment + 'px';
         }
-    }, 0.25);
+    }, 1);
 }
 
 dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву точек и всем разадли по ивенту*/

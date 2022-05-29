@@ -107,14 +107,14 @@ body{
 }
 .slider__wrapper-container {
     width: 650px;
-    height: 256px;
+    height: 200px;
     overflow: hidden;
     background-color: #3498db;
 }
 
 .slider__wrapper-container-line { /**/
     width: 700px;
-    height: 256px;
+    height: 200px;
     background-color: #3498db;
     display: flex;
     position: relative;
@@ -132,18 +132,24 @@ body{
 }
 .slide__item-wrap {
     width: 256px;
-    height: 256px;
+    height: 200px;
     background-color: #3498db;
 }
 .slider__item {
     width: 650px;
-    height: 256px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
 }
-
+.slider__item-text {
+    font-size: 400%;
+    color: #3498db;
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+}
 .slider__button {
     display: flex;
     flex-wrap: wrap;
