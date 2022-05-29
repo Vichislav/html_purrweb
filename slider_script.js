@@ -1,7 +1,5 @@
 
-/**************************СЛАЙДЕР**********************************/
-/*const prev = document.querySelector(`.slider__button-right`);
-const next = document.querySelector(`.slider__button-left`);*/
+
 const slides = document.querySelectorAll('.slide') /*псевдомассив элементов с классом slide*/
 const dots = document.querySelectorAll('.dot') /*псевдомассив элементов с классом dot*/
 
@@ -185,16 +183,16 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
 
         /*если слайд находится СПРАВА от активируемой точки*/
         if (index > indexDot) {
-            let counter = 0
-            moveDotRight(index, 0, slidesSize, 0, indexDot)
+            let counter = 0;
+            moveDotRight(index, 0, slidesSize, 0, indexDot);
             index--;
             for (; index >= indexDot ; index--) {
                 if (index === indexDot) {
                     counter++;
-                    moveDotRight(index, -counter * slidesSize, 0, 0)
+                    moveDotRight(index, -counter * slidesSize, 0, 0);
                 } else {
                     counter++;
-                    moveDotRight(index, -counter * slidesSize, slidesSize, 0)
+                    moveDotRight(index, -counter * slidesSize, slidesSize, 0);
                 }
             }
             index = indexDot;
@@ -203,16 +201,16 @@ dots.forEach((itemD, indexDot) =>{ /*пробежались по массиву 
 
         /*если слайд находится СЛЕВА от активируемой точки*/
         if (index < indexDot) {
-            let counter = 0
-            moveDotLeft(index, 0, -slidesSize, 0)
+            let counter = 0;
+            moveDotLeft(index, 0, -slidesSize, 0);
             index++;
             for (; index <= indexDot ; index++) {
                 if (index === indexDot) {
                     counter++;
-                    moveDotLeft(index, counter * slidesSize, 0, 0) /*сравнивая increment и endPoint  сравниваем 0 с 0*/
+                    moveDotLeft(index, counter * slidesSize, 0, 0);
                 } else {
                     counter++;
-                    moveDotLeft(index, counter * slidesSize, -slidesSize, 0)
+                    moveDotLeft(index, counter * slidesSize, -slidesSize, 0);
                 }
             }
             index = indexDot;
